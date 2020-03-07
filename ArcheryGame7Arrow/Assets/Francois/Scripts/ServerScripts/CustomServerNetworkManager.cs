@@ -55,6 +55,7 @@ public class CustomServerNetworkManager : NetworkManager
     {
         base.OnServerDisconnect(conn);
         connectedClients -= 1;
+        clientsInfoText.text = "Connected Clients : " + connectedClients;
     }
 
     private void OnPlayerDisconnected(NetworkConnection player)

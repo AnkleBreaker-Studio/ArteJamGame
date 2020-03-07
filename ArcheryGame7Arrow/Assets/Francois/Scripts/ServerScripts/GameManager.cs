@@ -57,6 +57,9 @@ public class GameManager : NetworkBehaviour
     void Start()
     {
         ServerNetworkManager = GetComponent<CustomServerNetworkManager>();
+        RedTeam = new TeamInfo();
+        BlueTeam = new TeamInfo();
+
         RedTeam.TeamColor = Color.red;
         BlueTeam.TeamColor = Color.blue;
         ServerHandlerRegister();
@@ -66,20 +69,29 @@ public class GameManager : NetworkBehaviour
     {
         if (ServerNetworkManager.PlayerList.Count == ServerNetworkManager.maxConnections && !teamSetted)
         {
+            print("SETTING ALL THE TEAMS");
             int i = 0;
             foreach (GameObject o in ServerNetworkManager.PlayerList)
             {
                 NetworkIdentity netID = o.GetComponent<NetworkIdentity>();
                 SetPlayerTeamMessage msg = new SetPlayerTeamMessage();
                 msg.Team = (i % 2 == 0) ? Team.blue : Team.red;
-                msg.TeamColor = (msg.Team == Team.blue) ? Color.blue : Color.red;
+                msg.TeamColor = Color.blue;
 
-                BlueTeam.Players.Add(new PlayerInfos()
-                {
-                    NetworkId = netID.netId,
-                    Team = (msg.Team == Team.blue) ? Team.blue : Team.red,
-                    IsReadyToStart = false
-                });
+                if (msg.Team == Team.blue)
+                    BlueTeam.Players.Add(new PlayerInfos()
+                    {
+                        NetworkId = netID.netId,
+                        Team = (msg.Team == Team.blue) ? Team.blue : Team.red,
+                        IsReadyToStart = false
+                    });
+                if (msg.Team == Team.red)
+                    RedTeam.Players.Add(new PlayerInfos()
+                    {
+                        NetworkId = netID.netId,
+                        Team = Team.red,
+                        IsReadyToStart = false
+                    });
                 msg.NetworkIdentity = netID;
                 NetworkServer.SendToAll(msg);
                 i++;
@@ -87,6 +99,14 @@ public class GameManager : NetworkBehaviour
 
             GameReadyToStartMessage readyMsg = new GameReadyToStartMessage();
             NetworkServer.SendToAll(readyMsg);
+            foreach (PlayerInfos playerInfo in BlueTeam.Players)
+            {
+                Debug.Log(playerInfo.NetworkId);
+            }
+            foreach (PlayerInfos playerInfo in RedTeam.Players)
+            {
+                Debug.Log(playerInfo.NetworkId);
+            }
             teamSetted = true;
         }
 
