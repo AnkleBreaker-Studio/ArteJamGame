@@ -37,6 +37,9 @@
 		<relationship name="timeline">
 			<destination>{d0eda748-fe2e-4073-8da9-1b28fd3befbd}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{2ded6f53-0e57-4b70-b048-e7b811f8e9f1}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{3c0b99cc-eb7f-457e-b4d1-6f7914c77bc5}">
 		<relationship name="masterBus">
@@ -1991,7 +1994,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>8</value>
@@ -2012,7 +2015,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>13.015510204081632</value>
@@ -2033,7 +2036,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>18.031020408163265</value>
@@ -2054,7 +2057,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>23.046530612244897</value>
@@ -2075,7 +2078,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>28.566904617168735</value>
@@ -2096,7 +2099,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>33.582414821250374</value>
@@ -2117,7 +2120,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>38.597925025332003</value>
@@ -2138,7 +2141,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>43.613435229413639</value>
@@ -2159,7 +2162,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>48.953469387755106</value>
@@ -2180,7 +2183,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>53.968979591836742</value>
@@ -2201,7 +2204,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>58.984489795918364</value>
@@ -2222,7 +2225,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>64</value>
@@ -2243,7 +2246,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>69.11143538135012</value>
@@ -2264,7 +2267,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>74.126945585431756</value>
@@ -2285,7 +2288,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>79.142455789513377</value>
@@ -2306,7 +2309,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>84.157965993595013</value>
@@ -2327,7 +2330,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>104.34763282674446</value>
@@ -2348,7 +2351,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>99.332122622662823</value>
@@ -2369,7 +2372,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>94.316612418581201</value>
@@ -2390,7 +2393,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>89.301102214499565</value>
@@ -2411,7 +2414,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>124.81356468374477</value>
@@ -2432,7 +2435,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>119.79805447966314</value>
@@ -2453,7 +2456,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>114.78254427558151</value>
@@ -2474,7 +2477,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20.5</value>
+			<value>30</value>
 		</property>
 		<property name="start">
 			<value>109.76703407149988</value>

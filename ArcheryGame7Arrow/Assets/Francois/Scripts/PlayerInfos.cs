@@ -8,14 +8,12 @@ public enum Team
     blue
 }
 
-public class PlayerInfos : MonoBehaviour {
+public class PlayerInfos {
 
-    public int id = -1;
     public uint NetworkId;
+    public bool IsReadyToStart;
+    public bool IsAlive;
+    public bool HasArrow;
     public Team Team;
 
-    public Team GetTeam()
-    {
-        return Team;
-    }
 }
