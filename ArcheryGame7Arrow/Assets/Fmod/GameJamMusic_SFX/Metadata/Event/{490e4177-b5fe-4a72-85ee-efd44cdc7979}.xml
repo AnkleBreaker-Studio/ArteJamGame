@@ -62,7 +62,11 @@
 			<destination>{9f0b27cb-5790-45e8-a877-bec5badf2327}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{218a540b-5b0d-4100-aafc-fcdd8806789b}" />
+	<object class="EventAutomatableProperties" id="{218a540b-5b0d-4100-aafc-fcdd8806789b}">
+		<property name="priority">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{1e321378-67a9-4c9c-9d86-f4f630ce2cf8}" />
 	<object class="GroupTrack" id="{c815d885-7472-48ee-9129-590e4075bbc9}">
 		<relationship name="modules">
@@ -288,7 +292,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{7e43f599-7b65-4ca7-abfa-4ad0233a4289}">
 		<property name="volume">
-			<value>-0.5</value>
+			<value>-7</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{6fe04a62-5ba0-4baa-bfde-0ef6f3c410da}</destination>
@@ -318,6 +322,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{fe8fe363-ed3b-4e25-82d2-be09924ac528}">
+		<property name="volume">
+			<value>-4</value>
+		</property>
 		<property name="name">
 			<value>music</value>
 		</property>
