@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3171624049280974335}
   - component: {fileID: 3171624049280974334}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e771487055dfd447a5ee428899ffb29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.05
+  speed: 0.1
 --- !u!114 &3171624049280974335
 MonoBehaviour:
   m_ObjectHideFlags: 0
