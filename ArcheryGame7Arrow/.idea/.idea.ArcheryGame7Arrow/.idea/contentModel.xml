@@ -24,6 +24,21 @@
           </e>
         </e>
         <e p="DontDestroyOnLoadingScene.cs" t="Include" />
+        <e p="FastIK" t="Include">
+          <e p="Documentation.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="FastIK" t="Include">
+              <e p="FastIKCCD.cs" t="Include" />
+              <e p="FastIKFabric.cs" t="Include" />
+              <e p="FastIKLook.cs" t="Include" />
+            </e>
+            <e p="Sample" t="Include">
+              <e p="SampleProcedualAnimation.cs" t="Include" />
+              <e p="SampleRotator.cs" t="Include" />
+              <e p="SampleSinMover.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Fmod" t="Include">
           <e p="GameJamMusic_SFX" t="Include">
             <e p="Metadata" t="Include">
@@ -97,6 +112,9 @@
             <e p="GameManager.cs" t="Include" />
             <e p="PlayerInfos.cs" t="Include" />
             <e p="ServerHUD.cs" t="Include" />
+            <e p="ServerScripts" t="Include">
+              <e p="ServerMessageData.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="I2" t="Include">
@@ -846,6 +864,7 @@
         <e p="XuX's folder" t="Include">
           <e p="Scripts" t="Include">
             <e p="PlayerController.cs" t="Include" />
+            <e p="SpawnerPlayer.cs" t="Include" />
           </e>
         </e>
       </e>

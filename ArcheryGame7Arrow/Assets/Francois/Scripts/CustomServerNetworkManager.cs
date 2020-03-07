@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
 public class CustomServerNetworkManager : NetworkManager
@@ -29,9 +31,9 @@ public class CustomServerNetworkManager : NetworkManager
     //keeping track of Clients connecting.
     public override void OnServerConnect(NetworkConnection conn)
     {
-
-        Debug.Log(networkAddress);
-        
+        PlayerConnectedMessage PCMsg = new PlayerConnectedMessage();
+        PCMsg.Name = conn.address;
+        PCMsg.ConnectionId = conn.connectionId;
         base.OnServerConnect(conn);
         connectedClients += 1;
         Debug.Log("Player joined the server :"  + connectedClients);
@@ -41,12 +43,13 @@ public class CustomServerNetworkManager : NetworkManager
         //Sending password information to client.
         StringMessage msg = new StringMessage(serverPassword);
         conn.Send(msg);
+        NetworkServer.SendToAll(PCMsg);
     }
 
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
         base.OnServerAddPlayer(conn);
-        PlayerList.Add(conn.identity.transform.gameObject);    
+        PlayerList.Add(conn.identity.transform.gameObject);
         Debug.Log("PlayerSpawned");
     }
 
@@ -57,16 +60,6 @@ public class CustomServerNetworkManager : NetworkManager
         connectedClients -= 1;
     }
 
-    public override void OnStopServer()
-    {
-        base.OnStopServer();
-    }
-
-    public override void OnServerRemovePlayer(NetworkConnection conn, NetworkIdentity player)
-    {
-        base.OnServerRemovePlayer(conn, player);
-    }
-    
     private void OnPlayerDisconnected(NetworkConnection player)
     {
         PlayerList.Remove(player.identity.transform.gameObject);

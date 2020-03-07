@@ -17,7 +17,7 @@ public class TeamInfo
     }
 }
 
-public class GameManager: MonoBehaviour
+public class GameManager: NetworkBehaviour
 {
     // Must be set before the build, will determine the number of
     // player in each team
@@ -64,5 +64,10 @@ public class GameManager: MonoBehaviour
 	{
 	    ServerNetworkManager = GetComponent<CustomServerNetworkManager>();
         NbPlayerPerTeam = ServerNetworkManager.maxConnections / 2;
+    }
+
+    public override void OnStartClient()
+    {
+        base.OnStartClient();
     }
 }
