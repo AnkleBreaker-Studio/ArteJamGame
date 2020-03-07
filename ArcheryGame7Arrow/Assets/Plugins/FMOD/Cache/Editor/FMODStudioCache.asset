@@ -14,12 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Fmod/GameJamMusic_SFX/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637192204093132405
+  lastModified: 637192209140056559
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 790
+    Value: 970
   Exists: 1
+--- !u!114 &-5570795976868236594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Game Music
+  m_EditorClassIdentifier: 
+  Path: event:/Game Music
+  guid: 21c106f4c808b647a7f9be5ba38ded96
+  Banks:
+  - {fileID: -3014609920368277543}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 125500
 --- !u!114 &-4794930714146905228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +81,47 @@ MonoBehaviour:
   - Name: Desktop
     Value: 738
   Exists: 1
+--- !u!114 &-3014609920368277543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/GameJamMusic_SFX/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637192209139946863
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-854330060275570045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu Music
+  m_EditorClassIdentifier: 
+  Path: event:/Menu Music
+  guid: 77410e49feb5724a85eeefd44cdc7979
+  Banks:
+  - {fileID: -3014609920368277543}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 137142
 --- !u!114 &-371376018547228003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +176,7 @@ MonoBehaviour:
   lastModified: 637192204093052594
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,16 +191,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -7879651304686266121}
-  - {fileID: -117921477366405084}
-  EditorEvents: []
+  - {fileID: -3014609920368277543}
+  EditorEvents:
+  - {fileID: 1297423061063439188}
+  - {fileID: -5570795976868236594}
+  - {fileID: 6495708550562186732}
+  - {fileID: -854330060275570045}
   EditorParameters:
   - {fileID: 5468429008015210441}
   - {fileID: 2685546660818197027}
   MasterBanks:
-  - {fileID: -117921477366405084}
+  - {fileID: -3014609920368277543}
   StringsBanks:
   - {fileID: -7879651304686266121}
-  stringsBankWriteTime: 637192204093132405
+  stringsBankWriteTime: 637192209140056559
   cacheVersion: 3
 --- !u!114 &893474529756537463
 MonoBehaviour:
@@ -156,6 +224,29 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &1297423061063439188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bow SFX
+  m_EditorClassIdentifier: 
+  Path: event:/Bow SFX
+  guid: 08dc2edcbe408749b9cd49cd63de84ee
+  Banks:
+  - {fileID: -3014609920368277543}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5467
 --- !u!114 &2102116697123484025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,3 +316,26 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 1
+--- !u!114 &6495708550562186732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Arrow SFX
+  m_EditorClassIdentifier: 
+  Path: event:/Arrow SFX
+  guid: 4ff963f3215c3f4e97ed6a99eeb1e361
+  Banks:
+  - {fileID: -3014609920368277543}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20000
