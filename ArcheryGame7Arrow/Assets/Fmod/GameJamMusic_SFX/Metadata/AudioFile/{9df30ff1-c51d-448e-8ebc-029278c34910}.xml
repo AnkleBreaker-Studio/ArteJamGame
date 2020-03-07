@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{9df30ff1-c51d-448e-8ebc-029278c34910}">
+		<property name="assetPath">
+			<value>largar.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1755102040816328</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{977c8b35-3d3f-42b9-b581-81986c630c86}</destination>
+		</relationship>
+	</object>
+</objects>
