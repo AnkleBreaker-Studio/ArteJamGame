@@ -44,6 +44,7 @@ public class CustomServerNetworkManager : NetworkManager
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
         base.OnServerAddPlayer(conn);
+        Debug.Log("Client just Connected");
         PlayerList.Clear();
         IEnumerable<GameObject> players = GameObject.FindGameObjectsWithTag("Player");
         int i = 0;
