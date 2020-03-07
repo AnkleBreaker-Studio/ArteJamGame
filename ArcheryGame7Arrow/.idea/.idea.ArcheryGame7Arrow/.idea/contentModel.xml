@@ -23,8 +23,66 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="DontDestroyOnLoadingScene.cs" t="Include" />
+        <e p="Fmod" t="Include">
+          <e p="GameJamMusic_SFX" t="Include">
+            <e p="Metadata" t="Include">
+              <e p="Asset" t="Include">
+                <e p="{977c8b35-3d3f-42b9-b581-81986c630c86}.xml" t="Include" />
+              </e>
+              <e p="AudioFile" t="Include">
+                <e p="{0bea5229-de5d-43b0-8d93-906cebd0982a}.xml" t="Include" />
+                <e p="{18beeab5-c525-4ce5-b3fc-62619a6a16f8}.xml" t="Include" />
+                <e p="{41f8f366-c532-4670-8cfb-577a729d4a5a}.xml" t="Include" />
+                <e p="{7273b02a-b13d-4b51-b55a-ca1effce3767}.xml" t="Include" />
+                <e p="{79465951-1748-429d-87d7-1cc86ff38d4b}.xml" t="Include" />
+                <e p="{7add33a3-57d3-415b-9619-c513bf1ff909}.xml" t="Include" />
+                <e p="{a50c7638-c4e3-471d-886c-59454007a6bc}.xml" t="Include" />
+                <e p="{bf0cf9dd-f35c-42a5-9e43-ed71bc23cdfd}.xml" t="Include" />
+                <e p="{d71305a9-c860-4d08-88ce-f89495e87383}.xml" t="Include" />
+                <e p="{eae4f452-102e-45c1-aa46-871b50d5ce07}.xml" t="Include" />
+              </e>
+              <e p="Bank" t="Include">
+                <e p="{2ded6f53-0e57-4b70-b048-e7b811f8e9f1}.xml" t="Include" />
+              </e>
+              <e p="BankFolder" t="Include">
+                <e p="{21598d9a-5553-44ca-8c34-7498b5426688}.xml" t="Include" />
+              </e>
+              <e p="EffectPresetFolder" t="Include">
+                <e p="{5d336c2c-6b7f-4d7e-b120-3a1ffc4ec549}.xml" t="Include" />
+              </e>
+              <e p="EncodingSetting" t="Include">
+                <e p="{904ed8e5-3ed0-4b67-91f8-ac589a9bd25c}.xml" t="Include" />
+              </e>
+              <e p="Event" t="Include">
+                <e p="{490e4177-b5fe-4a72-85ee-efd44cdc7979}.xml" t="Include" />
+              </e>
+              <e p="EventFolder" t="Include">
+                <e p="{a1b6c649-fc30-4372-8244-eefcf3b26572}.xml" t="Include" />
+              </e>
+              <e p="Master.xml" t="Include" />
+              <e p="Mixer.xml" t="Include" />
+              <e p="ParameterPresetFolder" t="Include">
+                <e p="{8140a4f1-5cc6-4dc6-9b1a-1b0714cb02c8}.xml" t="Include" />
+              </e>
+              <e p="Platform" t="Include">
+                <e p="{a04f9b4e-14c1-410a-8a1c-c31ffa4c448f}.xml" t="Include" />
+              </e>
+              <e p="Return" t="Include">
+                <e p="{bef9d451-8b79-4083-a2e3-086e0274edf4}.xml" t="Include" />
+              </e>
+              <e p="SnapshotGroup" t="Include">
+                <e p="{77ee396b-ae30-4edb-9ca8-df5bdc167828}.xml" t="Include" />
+              </e>
+              <e p="Tags.xml" t="Include" />
+              <e p="Workspace.xml" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Francois" t="Include">
           <e p="Scripts" t="Include">
+            <e p="ClientHUD.cs" t="Include" />
+            <e p="CustomClientNetworkManager.cs" t="Include" />
             <e p="CustomServerNetworkManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="PlayerInfos.cs" t="Include" />
