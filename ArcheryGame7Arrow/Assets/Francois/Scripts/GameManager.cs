@@ -21,7 +21,6 @@ public class GameManager: MonoBehaviour
 {
     // Must be set before the build, will determine the number of
     // player in each team
-    [SerializeField] public int NbPlayerPerTeam;
     [SerializeField] uint mWinScore;
     public CustomServerNetworkManager ServerNetworkManager;
     public TeamInfo RedTeam;
@@ -37,6 +36,7 @@ public class GameManager: MonoBehaviour
     public bool BlueTeamWon;
 
     public int nbPlayerInRoom = 0;
+    private int NbPlayerPerTeam;
 
     
     private static GameManager instance = null;
@@ -63,5 +63,6 @@ public class GameManager: MonoBehaviour
 	void Start ()
 	{
 	    ServerNetworkManager = GetComponent<CustomServerNetworkManager>();
+        NbPlayerPerTeam = ServerNetworkManager.maxConnections / 2;
     }
 }

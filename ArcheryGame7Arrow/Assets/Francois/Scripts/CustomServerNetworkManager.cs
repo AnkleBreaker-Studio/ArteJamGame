@@ -46,20 +46,8 @@ public class CustomServerNetworkManager : NetworkManager
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
         base.OnServerAddPlayer(conn);
+        PlayerList.Add(conn.identity.transform.gameObject);    
         Debug.Log("PlayerSpawned");
-        PlayerList.Clear();
-        IEnumerable<GameObject> players = GameObject.FindGameObjectsWithTag("Player");
-        int i = 0;
-        foreach (GameObject player in players)
-        {
-
-            PlayerInfos info = player.GetComponent<PlayerInfos>();
-            info.id = i;
-            info.NetworkId = player.GetComponent<NetworkIdentity>().netId;
-            info.Team = (info.id < gamemanagerInstance.NbPlayerPerTeam) ? Team.red : Team.blue;
-            i++;
-            PlayerList.Add((player));
-        }
     }
 
     //keeping track of Clients disconnecting.
@@ -81,13 +69,7 @@ public class CustomServerNetworkManager : NetworkManager
     
     private void OnPlayerDisconnected(NetworkConnection player)
     {
-        PlayerList.Clear();
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
-        for (int i = 0; i < players.Length; i++)
-        {
-            PlayerList.Add((players[i]));
-        }
+        PlayerList.Remove(player.identity.transform.gameObject);
     }
 
     public override void OnClientDisconnect(NetworkConnection conn)
