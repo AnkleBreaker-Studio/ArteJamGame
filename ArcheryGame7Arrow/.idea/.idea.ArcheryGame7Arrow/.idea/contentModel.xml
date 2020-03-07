@@ -23,6 +23,14 @@
             <e p="readme.txt" t="Include" />
           </e>
         </e>
+        <e p="Francois" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="CustomServerNetworkManager.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+            <e p="PlayerInfos.cs" t="Include" />
+            <e p="ServerHUD.cs" t="Include" />
+          </e>
+        </e>
         <e p="I2" t="Include">
           <e p="Localization" t="Include">
             <e p="Examples" t="Include">
