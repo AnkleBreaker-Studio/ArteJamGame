@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float speed;
+    [SerializeField]
     private float jumpForce;
 
     private Camera cam;
@@ -34,8 +35,7 @@ public class PlayerController : MonoBehaviour
         Move();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.velocity = Vector2.up * jumpForce;
-            Debug.Log("jump!");
+            Jump();
         }
         //Vector2 lookDir = mousePos - cubeTransform.transform.position; // aim Vector
         //Debug.Log(lookDir);
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-
+        rb.velocity = Vector2.up * jumpForce;
+        Debug.Log("jump!");
     }
 }
