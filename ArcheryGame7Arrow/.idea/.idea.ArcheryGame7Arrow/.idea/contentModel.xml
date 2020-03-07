@@ -34,12 +34,18 @@
                 <e p="{0bea5229-de5d-43b0-8d93-906cebd0982a}.xml" t="Include" />
                 <e p="{18beeab5-c525-4ce5-b3fc-62619a6a16f8}.xml" t="Include" />
                 <e p="{41f8f366-c532-4670-8cfb-577a729d4a5a}.xml" t="Include" />
+                <e p="{610b6e49-a2a0-4111-a97f-29a297759707}.xml" t="Include" />
                 <e p="{7273b02a-b13d-4b51-b55a-ca1effce3767}.xml" t="Include" />
                 <e p="{79465951-1748-429d-87d7-1cc86ff38d4b}.xml" t="Include" />
                 <e p="{7add33a3-57d3-415b-9619-c513bf1ff909}.xml" t="Include" />
+                <e p="{88b27af6-0d00-4d7e-a21d-3beca1baf05f}.xml" t="Include" />
+                <e p="{9df30ff1-c51d-448e-8ebc-029278c34910}.xml" t="Include" />
                 <e p="{a50c7638-c4e3-471d-886c-59454007a6bc}.xml" t="Include" />
+                <e p="{bb101118-cf07-456a-bc78-a4769403ea60}.xml" t="Include" />
+                <e p="{bca55c5c-2a7c-43bd-98e8-5797a9f15d9e}.xml" t="Include" />
                 <e p="{bf0cf9dd-f35c-42a5-9e43-ed71bc23cdfd}.xml" t="Include" />
                 <e p="{d71305a9-c860-4d08-88ce-f89495e87383}.xml" t="Include" />
+                <e p="{e8989562-7c79-4ea3-a4b1-fe7660bd5d02}.xml" t="Include" />
                 <e p="{eae4f452-102e-45c1-aa46-871b50d5ce07}.xml" t="Include" />
               </e>
               <e p="Bank" t="Include">
@@ -56,12 +62,16 @@
               </e>
               <e p="Event" t="Include">
                 <e p="{490e4177-b5fe-4a72-85ee-efd44cdc7979}.xml" t="Include" />
+                <e p="{dc2edc08-40be-4987-b9cd-49cd63de84ee}.xml" t="Include" />
               </e>
               <e p="EventFolder" t="Include">
                 <e p="{a1b6c649-fc30-4372-8244-eefcf3b26572}.xml" t="Include" />
               </e>
               <e p="Master.xml" t="Include" />
               <e p="Mixer.xml" t="Include" />
+              <e p="ParameterPreset" t="Include">
+                <e p="{6177ffeb-018f-411a-ac6d-541cca7cb5e7}.xml" t="Include" />
+              </e>
               <e p="ParameterPresetFolder" t="Include">
                 <e p="{8140a4f1-5cc6-4dc6-9b1a-1b0714cb02c8}.xml" t="Include" />
               </e>

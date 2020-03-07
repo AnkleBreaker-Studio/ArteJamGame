@@ -31,9 +31,11 @@ public class CustomServerNetworkManager : NetworkManager
     {
 
         Debug.Log(networkAddress);
-
+        
         base.OnServerConnect(conn);
         connectedClients += 1;
+        Debug.Log("Player joined the server :"  + connectedClients);
+        clientsInfoText.text = "Connected Clients : " + connectedClients;
         //clientsInfoText.text = "Connected Clients : " + connectedClients;
 
         //Sending password information to client.
@@ -44,7 +46,7 @@ public class CustomServerNetworkManager : NetworkManager
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
         base.OnServerAddPlayer(conn);
-        Debug.Log("Client just Connected");
+        Debug.Log("PlayerSpawned");
         PlayerList.Clear();
         IEnumerable<GameObject> players = GameObject.FindGameObjectsWithTag("Player");
         int i = 0;
@@ -58,7 +60,6 @@ public class CustomServerNetworkManager : NetworkManager
             i++;
             PlayerList.Add((player));
         }
-        gamemanagerInstance.SetGameInfo();
     }
 
     //keeping track of Clients disconnecting.
@@ -66,7 +67,6 @@ public class CustomServerNetworkManager : NetworkManager
     {
         base.OnServerDisconnect(conn);
         connectedClients -= 1;
-        clientsInfoText.text = "Connected Clients : " + connectedClients;
     }
 
     public override void OnStopServer()
