@@ -23,20 +23,6 @@ public class GameManager: NetworkBehaviour
     // player in each team
     [SerializeField] uint mWinScore;
     public CustomServerNetworkManager ServerNetworkManager;
-    public TeamInfo RedTeam;
-    public TeamInfo BlueTeam;
-    
-    public int KeyRespawnTime;
-    public bool GameStart;
-    
-    public float GameStartATime = 0;
-    public float GameStartWarnTime = 5;
-    
-    public bool RedTeamWon;
-    public bool BlueTeamWon;
-
-    public int nbPlayerInRoom = 0;
-    private int NbPlayerPerTeam;
 
     
     private static GameManager instance = null;
@@ -63,11 +49,5 @@ public class GameManager: NetworkBehaviour
 	void Start ()
 	{
 	    ServerNetworkManager = GetComponent<CustomServerNetworkManager>();
-        NbPlayerPerTeam = ServerNetworkManager.maxConnections / 2;
-    }
-
-    public override void OnStartClient()
-    {
-        base.OnStartClient();
     }
 }

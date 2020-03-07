@@ -38,9 +38,6 @@ public class CustomServerNetworkManager : NetworkManager
         connectedClients += 1;
         Debug.Log("Player joined the server :"  + connectedClients);
         clientsInfoText.text = "Connected Clients : " + connectedClients;
-        //clientsInfoText.text = "Connected Clients : " + connectedClients;
-
-        //Sending password information to client.
         StringMessage msg = new StringMessage(serverPassword);
         conn.Send(msg);
         NetworkServer.SendToAll(PCMsg);

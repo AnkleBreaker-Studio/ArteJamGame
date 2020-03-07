@@ -9,6 +9,16 @@ public class PlayerConnectedMessage : MessageBase
     public string Name;
 }
 
+public class PlayerGotKilledMessage : MessageBase
+{
+
+}
+
+public class GameStartingMessage : MessageBase
+{
+
+}
+
 public static class ServerMessageData
 {
     

@@ -5,7 +5,6 @@
     <e p="C:\Users\franc\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ArcheryGame7Arrow.1963527305.00" t="ExcludeRecursive" />
     <e p="D:\UnityProjects\ArteJamGame\ArcheryGame7Arrow" t="IncludeRecursive">
       <e p="ArcheryGame7Arrow.sln" t="IncludeFlat" />
-      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -106,13 +105,15 @@
         </e>
         <e p="Francois" t="Include">
           <e p="Scripts" t="Include">
-            <e p="ClientHUD.cs" t="Include" />
-            <e p="CustomClientNetworkManager.cs" t="Include" />
-            <e p="CustomServerNetworkManager.cs" t="Include" />
-            <e p="GameManager.cs" t="Include" />
+            <e p="ClientScripts" t="Include">
+              <e p="ClientHUD.cs" t="Include" />
+              <e p="CustomClientNetworkManager.cs" t="Include" />
+            </e>
             <e p="PlayerInfos.cs" t="Include" />
-            <e p="ServerHUD.cs" t="Include" />
             <e p="ServerScripts" t="Include">
+              <e p="CustomServerNetworkManager.cs" t="Include" />
+              <e p="GameManager.cs" t="Include" />
+              <e p="ServerHUD.cs" t="Include" />
               <e p="ServerMessageData.cs" t="Include" />
             </e>
           </e>
@@ -828,16 +829,6 @@
               <e p="UITexture.cs" t="Include" />
               <e p="UITooltip.cs" t="Include" />
               <e p="UIViewport.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Plugins" t="Include">
-          <e p="GitHub" t="Include">
-            <e p="Editor" t="Include">
-              <e p="credits.txt" t="Include" />
-              <e p="eula.txt" t="Include" />
-              <e p="ExtensionLoader.cs" t="Include" />
-              <e p="UnityAPIWrapper.cs" t="Include" />
             </e>
           </e>
         </e>
