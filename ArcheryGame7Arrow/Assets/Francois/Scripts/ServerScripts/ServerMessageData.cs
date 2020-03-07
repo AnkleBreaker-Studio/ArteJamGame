@@ -11,13 +11,31 @@ public class PlayerConnectedMessage : MessageBase
 
 public class PlayerGotKilledMessage : MessageBase
 {
-
+    
 }
 
 public class GameStartingMessage : MessageBase
 {
 
 }
+
+public class SetPlayerTeamMessage : MessageBase
+{
+    public NetworkIdentity NetworkIdentity;
+    public Team Team;
+    public Color TeamColor;
+}
+
+public class GameReadyToStartMessage : MessageBase
+{
+}
+
+public class GameStartMessage : MessageBase
+{
+    
+}
+
+
 
 public static class ServerMessageData
 {
