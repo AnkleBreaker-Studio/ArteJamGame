@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:ArcheryGame7Arrow/Assets/XuX's folder/Scripts/testanim.anim.meta
+guid: ac5fcaab1b253f64391588cd71c7ce65
+NativeFormatImporter:
+=======
 guid: 7b2976f0bdf17fa4a9486844ff8a5c78
 folderAsset: yes
 DefaultImporter:
+>>>>>>> f5380393193d79bc78003ac94fba14bf0c9071ba:ArcheryGame7Arrow/Assets/Francois/Scripts/Editor.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
