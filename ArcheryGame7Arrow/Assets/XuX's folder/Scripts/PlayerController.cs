@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         playerTransform.transform.Translate(new Vector3(_horizontalInput, 0, 0) * speed, Space.World);
+
     }
 
     private void Jump()
