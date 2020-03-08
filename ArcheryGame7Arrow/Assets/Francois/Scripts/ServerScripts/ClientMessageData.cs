@@ -13,7 +13,7 @@ public class ClientReadyToStartMessage : MessageBase
 
 public class PlayerDeadMessage : MessageBase
 {
-    public NetworkIdentity NetId;
+    public int NetId;
 }
 
 public class ClientReadyToEndGameMessage : MessageBase
