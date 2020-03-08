@@ -22,6 +22,7 @@ public class CustomServerNetworkManager : NetworkManager
     public override void OnStartServer()
     {
         base.OnStartServer();
+        GameManager.Instance.ServerHandlerRegister();
         connectedClients = 0;
         clientsInfoText.text = "Connected Clients : " + connectedClients;
     }

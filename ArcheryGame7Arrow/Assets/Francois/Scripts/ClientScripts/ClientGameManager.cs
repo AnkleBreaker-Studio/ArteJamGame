@@ -42,7 +42,6 @@ public class ClientGameManager : MonoBehaviour
     
     private void Start()
     {
-        RegisterHandlers();
     }
 
     private void OnConnectedToServer()
