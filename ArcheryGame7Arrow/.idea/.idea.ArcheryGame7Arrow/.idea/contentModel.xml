@@ -176,6 +176,9 @@
               <e p="ClientHUD.cs" t="Include" />
               <e p="CustomClientNetworkManager.cs" t="Include" />
             </e>
+            <e p="Editor" t="Include">
+              <e p="Builder.cs" t="Include" />
+            </e>
             <e p="PlayerInfos.cs" t="Include" />
             <e p="ServerScripts" t="Include">
               <e p="ClientMessageData.cs" t="Include" />

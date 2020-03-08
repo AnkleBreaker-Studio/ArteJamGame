@@ -159,7 +159,7 @@
 	</object>
 	<object class="MultiSound" id="{994b306e-eaeb-4f7f-8489-fd32e2e48e21}">
 		<property name="length">
-			<value>0.5</value>
+			<value>0.5625</value>
 		</property>
 		<property name="volume">
 			<value>-3.5</value>
@@ -169,6 +169,9 @@
 		</property>
 		<relationship name="modulators">
 			<destination>{4f2544ae-fa65-4533-adaa-08cbf3235493}</destination>
+		</relationship>
+		<relationship name="fadeOutCurve">
+			<destination>{0af0163d-6336-4f0e-b6c9-55ec3aabcd4c}</destination>
 		</relationship>
 		<relationship name="sounds">
 			<destination>{abe22fbe-b90b-41cb-8ac1-7bd24fdb340d}</destination>
@@ -259,6 +262,14 @@
 			<value>9</value>
 		</property>
 	</object>
+	<object class="FadeCurve" id="{0af0163d-6336-4f0e-b6c9-55ec3aabcd4c}">
+		<relationship name="startPoint">
+			<destination>{0546e255-9b94-47d7-8166-9ad9e3103001}</destination>
+		</relationship>
+		<relationship name="endPoint">
+			<destination>{66238e91-2ac5-48e9-956a-7b1235091d7a}</destination>
+		</relationship>
+	</object>
 	<object class="SingleSound" id="{abe22fbe-b90b-41cb-8ac1-7bd24fdb340d}">
 		<relationship name="audioFile">
 			<destination>{c7286417-fdd3-41a8-9511-2f4470b3c22a}</destination>
@@ -319,6 +330,25 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{7fcefb3c-7be0-4e9b-8d0d-6410348c6228}" />
+	<object class="AutomationPoint" id="{0546e255-9b94-47d7-8166-9ad9e3103001}">
+		<property name="position">
+			<value>0.5</value>
+		</property>
+		<property name="value">
+			<value>1</value>
+		</property>
+		<property name="curveShape">
+			<value>0.25471893</value>
+		</property>
+	</object>
+	<object class="AutomationPoint" id="{66238e91-2ac5-48e9-956a-7b1235091d7a}">
+		<property name="position">
+			<value>0.5625</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{bcc02aec-9e04-4e18-a8a4-99a5d03d5105}">
 		<relationship name="parameter">
 			<destination>{22e1f986-3844-4b27-b938-b1fb6f5ff8d4}</destination>
