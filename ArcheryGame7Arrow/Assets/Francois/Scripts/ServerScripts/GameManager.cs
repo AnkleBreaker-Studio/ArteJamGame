@@ -62,7 +62,7 @@ public class GameManager : NetworkBehaviour
 
     private void ClientReadyToEndGameMessageReceived(NetworkConnection arg1, ClientReadyToEndGameMessage arg2)
     {
-        PlayerInfos a = GetPlayerTeam(arg1.identity);
+        PlayerInfos a = GetPlayerTeam(arg1.connectionId);
         if (a != null)
             a.ReadyToStop = true;
     }
@@ -103,18 +103,18 @@ public class GameManager : NetworkBehaviour
                 if (msg.Team == Team.blue)
                     BlueTeam.Players.Add(new PlayerInfos()
                     {
-                        NetworkId = (uint) o.conn.connectionId,
+                        NetworkId = o.conn.connectionId,
                         Team = Team.blue,
                         IsReadyToStart = false
                     });
                 if (msg.Team == Team.red)
                     RedTeam.Players.Add(new PlayerInfos()
                     {
-                        NetworkId = (uint) o.conn.connectionId,
+                        NetworkId = o.conn.connectionId,
                         Team = Team.red,
                         IsReadyToStart = false
                     });
-                msg.NetworkConnection = netID;
+                msg.NetId = netID.connectionId;
                 NetworkServer.SendToAll(msg);
                 print("send1");
                 i++;
@@ -194,7 +194,7 @@ public class GameManager : NetworkBehaviour
     {
         foreach (PlayerData o in ServerNetworkManager.PlayerList)
         {
-            PlayerInfos a = GetPlayerTeam(arg1.identity);
+            PlayerInfos a = GetPlayerTeam(arg1.connectionId);
             if (a != null)
             {
                 print("on spawn");
@@ -205,9 +205,9 @@ public class GameManager : NetworkBehaviour
         }
     }
     
-    private void PlayerDeadMessageRecieved(PlayerDeadMessage obj)
+    private void PlayerDeadMessageRecieved(NetworkConnection arg1, PlayerDeadMessage obj)
     {
-        PlayerInfos playerInfo = GetPlayerTeam(obj.NetId);
+        PlayerInfos playerInfo = GetPlayerTeam(arg1.connectionId);
         playerInfo.IsAlive = false;
         playerInfo.HasArrow = false;
     }
@@ -225,18 +225,18 @@ public class GameManager : NetworkBehaviour
         return true;
     }
 
-    public PlayerInfos GetPlayerTeam(NetworkIdentity NetId)
+    public PlayerInfos GetPlayerTeam(int NetId)
     {
-        PlayerInfos a = BlueTeam.Players.SingleOrDefault(x => x.NetworkId == NetId.netId);
+        PlayerInfos a = BlueTeam.Players.SingleOrDefault(x => x.NetworkId == NetId);
         if (a == null)
-            a = RedTeam.Players.SingleOrDefault(x => x.NetworkId == NetId.netId);
+            a = RedTeam.Players.SingleOrDefault(x => x.NetworkId == NetId);
         return a;
     }
     
     private void ClientOutOfArrowMessageReceived(NetworkConnection arg1, ClientOutOfArrowMessage arg2)
     {
         print("test");
-        PlayerInfos pInfo = GetPlayerTeam(arg1.identity);
+        PlayerInfos pInfo = GetPlayerTeam(arg1.connectionId);
         pInfo.HasArrow = false;
     }
 }

@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
-    [SerializeField] private Animator animatorToLink;
 
     private Camera cam;
     private NetworkTransform playerTransform;
@@ -24,8 +23,7 @@ public class PlayerController : MonoBehaviour
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<NetworkAnimator>();
-        animator.animator = animatorToLink;
-
+        animator.animator = GetComponent<Animator>();
     }
 
     void Update()
