@@ -103,7 +103,7 @@ public class ClientGameManager : NetworkBehaviour
         yield return new WaitForSeconds(1);
         _networkManager.GameStartingUiLabel.text = "1";
         yield return null;
-        ClientReadyToStartMessage msg = new ClientReadyToStartMessage();
+        ClientSpawnPlayerMessage msg = new ClientSpawnPlayerMessage();
         NetworkClient.Send(msg);
     }
     

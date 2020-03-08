@@ -11,6 +11,11 @@ public class ClientReadyToStartMessage : MessageBase
     public NetworkIdentity NetId;
 }
 
+public class ClientSpawnPlayerMessage : MessageBase
+{
+    public NetworkIdentity NetId;
+}
+
 public class PlayerDeadMessage : MessageBase
 {
     public int NetId;
