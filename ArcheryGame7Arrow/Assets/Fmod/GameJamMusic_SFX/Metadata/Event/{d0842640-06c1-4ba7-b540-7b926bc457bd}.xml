@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{d0842640-06c1-4ba7-b540-7b926bc457bd}">
 		<property name="name">
-			<value>walk SFX</value>
+			<value>Run SFX</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -98,6 +98,9 @@
 		<property name="volume">
 			<value>-3.5</value>
 		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{fd2b6873-950a-4f5d-86da-fd65aafc920c}</destination>
 		</relationship>
@@ -150,7 +153,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>7</value>
+			<value>9</value>
 		</property>
 	</object>
 	<object class="SingleSound" id="{00847a85-4023-4f25-b5da-c4c901409acb}">
