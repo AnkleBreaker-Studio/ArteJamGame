@@ -123,13 +123,11 @@ public class GameManager : NetworkBehaviour
                     });
                 msg.NetId = netID.connectionId;
                 NetworkServer.SendToAll(msg);
-                print("send1");
                 i++;
             }
 
             GameReadyToStartMessage readyMsg = new GameReadyToStartMessage();
             NetworkServer.SendToAll(readyMsg);
-            print("send2");
             teamSetted = true;
         }
     }
@@ -138,7 +136,6 @@ public class GameManager : NetworkBehaviour
     {
         if (IsTeamReady(BlueTeam) && IsTeamReady(RedTeam) && !gameStarted)
         {
-            print("test");
             gameStarted = true;
             GameStartMessage msg = new GameStartMessage();
             NetworkServer.SendToAll(msg);

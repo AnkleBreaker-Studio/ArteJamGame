@@ -105,7 +105,11 @@ public class ClientGameManager : NetworkBehaviour
         yield return null;
         ClientSpawnPlayerMessage msg = new ClientSpawnPlayerMessage();
         NetworkClient.Send(msg);
-        _networkManager.GameStartingUI.SetActive(false);
+        if (playerList.SingleOrDefault(x => x.ReadyToStart == false) == null)
+        {
+            ClientReadyToStartMessage msg2 = new ClientReadyToStartMessage();
+            NetworkClient.Send(msg2);
+        }
     }
     
     private void DrawGameMessageReceived(NetworkConnection arg1, DrawGameMessage arg2)
@@ -174,14 +178,6 @@ public class ClientGameManager : NetworkBehaviour
             clientInfo.IsAlive = true;
             clientInfo.HasArrow = true;
             clientInfo.ReadyToStart = true;
-        }
-
-        print(playerList.SingleOrDefault(x => x.ReadyToStart == false) == null);
-        if (playerList.SingleOrDefault(x => x.ReadyToStart == false) == null)
-        {
-            print("envoie client ready to start");
-            ClientReadyToStartMessage msg = new ClientReadyToStartMessage();
-            NetworkClient.Send(msg);
         }
     }
 
