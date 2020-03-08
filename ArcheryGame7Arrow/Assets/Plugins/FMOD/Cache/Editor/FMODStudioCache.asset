@@ -14,11 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Fmod/GameJamMusic_SFX/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637192209140056559
+  lastModified: 637192224611672917
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 970
+  Exists: 1
+--- !u!114 &-6359025314550288654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Arrow Hit
+  m_EditorClassIdentifier: 
+  Name: Arrow Hit
+  Min: 0
+  Max: 4
+  Default: 0
   Exists: 1
 --- !u!114 &-5570795976868236594
 MonoBehaviour:
@@ -35,7 +52,7 @@ MonoBehaviour:
   Path: event:/Game Music
   guid: 21c106f4c808b647a7f9be5ba38ded96
   Banks:
-  - {fileID: -3014609920368277543}
+  - {fileID: 6964814938073508631}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -99,6 +116,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-1668608948817808862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: Bow stage
+  m_EditorClassIdentifier: 
+  Name: Bow stage
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-854330060275570045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +148,7 @@ MonoBehaviour:
   Path: event:/Menu Music
   guid: 77410e49feb5724a85eeefd44cdc7979
   Banks:
-  - {fileID: -3014609920368277543}
+  - {fileID: 6964814938073508631}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -191,20 +225,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -7879651304686266121}
-  - {fileID: -3014609920368277543}
+  - {fileID: 6964814938073508631}
   EditorEvents:
   - {fileID: 1297423061063439188}
   - {fileID: -5570795976868236594}
   - {fileID: 6495708550562186732}
   - {fileID: -854330060275570045}
   EditorParameters:
-  - {fileID: 5468429008015210441}
-  - {fileID: 2685546660818197027}
+  - {fileID: -6359025314550288654}
+  - {fileID: -1668608948817808862}
   MasterBanks:
-  - {fileID: -3014609920368277543}
+  - {fileID: 6964814938073508631}
   StringsBanks:
   - {fileID: -7879651304686266121}
-  stringsBankWriteTime: 637192209140056559
+  stringsBankWriteTime: 637192224611672917
   cacheVersion: 3
 --- !u!114 &893474529756537463
 MonoBehaviour:
@@ -239,7 +273,7 @@ MonoBehaviour:
   Path: event:/Bow SFX
   guid: 08dc2edcbe408749b9cd49cd63de84ee
   Banks:
-  - {fileID: -3014609920368277543}
+  - {fileID: 6964814938073508631}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -331,7 +365,7 @@ MonoBehaviour:
   Path: event:/Arrow SFX
   guid: 4ff963f3215c3f4e97ed6a99eeb1e361
   Banks:
-  - {fileID: -3014609920368277543}
+  - {fileID: 6964814938073508631}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -339,3 +373,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 20000
+--- !u!114 &6964814938073508631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/GameJamMusic_SFX/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637192224611633343
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
