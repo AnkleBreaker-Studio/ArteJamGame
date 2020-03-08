@@ -69,7 +69,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void DisconnectMessageReceived(NetworkConnection arg1, DisconnectMessage arg2)
     {
-        playerList.Remove(playerList.SingleOrDefault(x => x.NetConn == arg1));
+        playerList.Remove(playerList.SingleOrDefault(x => x.NetConn == arg1.connectionId));
     }
 
     public IEnumerator RedTeamWon()
@@ -165,7 +165,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void SetPlayerTeamMessageReceived(NetworkConnection arg1, SetPlayerTeamMessage arg2)
     {
-        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1);
+        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg2.NetId);
         if (clientInfo != null)
         {
             clientInfo.Team = arg2.Team;
@@ -192,7 +192,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void PlayerGotKilledMessageReceived(NetworkConnection arg1, PlayerGotKilledMessage arg2)
     {
-        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1.connectionId);
+        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg2.PlayerId);
         if (clientInfo != null)
         {
             clientInfo.IsAlive = false;
