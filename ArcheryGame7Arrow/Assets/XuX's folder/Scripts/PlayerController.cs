@@ -53,7 +53,8 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         rb.velocity = Vector2.up * jumpForce;
-        //animator.parameters.
+        animator.SetBool("isJumping", true);
+        animator.SetBool("test", true);
         Debug.Log("jump!");
     }
 }
