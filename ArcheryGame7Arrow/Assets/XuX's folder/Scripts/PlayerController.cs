@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
-        //Vector2 lookDir = mousePos - playerTransform.transform.position; // aim Vector
+        Vector2 lookDir = mousePos - playerTransform.transform.position; // aim Vector
         //Debug.Log(lookDir);
     }
 
