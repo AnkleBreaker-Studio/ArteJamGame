@@ -1,0 +1,26 @@
+﻿
+using System.Collections;
+using System.Collections.Generic;
+using JetBrains.Annotations;
+using Mirror;
+using UnityEngine;
+
+
+public class ClientReadyToStartMessage : MessageBase
+{
+    public NetworkIdentity NetId;
+}
+
+public class PlayerDeadMessage : MessageBase
+{
+    public NetworkIdentity NetId;
+}
+
+public class ClientReadyToEndGameMessage : MessageBase
+{
+}
+
+public static class ClientMessageData
+{
+    
+}

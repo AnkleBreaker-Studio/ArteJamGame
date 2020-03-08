@@ -5,9 +5,16 @@
     <e p="C:\Users\franc\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_ArcheryGame7Arrow.1963527305.00" t="ExcludeRecursive" />
     <e p="D:\UnityProjects\ArteJamGame\ArcheryGame7Arrow" t="IncludeRecursive">
       <e p="ArcheryGame7Arrow.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="BorjaTalens" t="Include">
+          <e p="script" t="Include">
+            <e p="IKManager.cs" t="Include" />
+          </e>
+        </e>
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
@@ -45,22 +52,34 @@
                 <e p="{977c8b35-3d3f-42b9-b581-81986c630c86}.xml" t="Include" />
               </e>
               <e p="AudioFile" t="Include">
+                <e p="{07aa12ad-fdc8-466c-9d65-28a7a2ee0efb}.xml" t="Include" />
                 <e p="{0bea5229-de5d-43b0-8d93-906cebd0982a}.xml" t="Include" />
+                <e p="{11a7d226-bab4-4150-bd1b-ecb75780e634}.xml" t="Include" />
                 <e p="{18beeab5-c525-4ce5-b3fc-62619a6a16f8}.xml" t="Include" />
+                <e p="{21c1f2c5-fade-4a3e-84d1-6976f72ecade}.xml" t="Include" />
+                <e p="{392115ea-71c9-44a7-86ce-3b1468df4543}.xml" t="Include" />
                 <e p="{41f8f366-c532-4670-8cfb-577a729d4a5a}.xml" t="Include" />
+                <e p="{46b0ab6a-5477-420a-a372-8900d7bd9553}.xml" t="Include" />
+                <e p="{59667245-edec-49cb-af2c-363115761de9}.xml" t="Include" />
                 <e p="{610b6e49-a2a0-4111-a97f-29a297759707}.xml" t="Include" />
                 <e p="{7273b02a-b13d-4b51-b55a-ca1effce3767}.xml" t="Include" />
                 <e p="{79465951-1748-429d-87d7-1cc86ff38d4b}.xml" t="Include" />
                 <e p="{7add33a3-57d3-415b-9619-c513bf1ff909}.xml" t="Include" />
                 <e p="{88b27af6-0d00-4d7e-a21d-3beca1baf05f}.xml" t="Include" />
+                <e p="{8b895b52-87ce-4b85-b5b1-43bce6c50c1c}.xml" t="Include" />
                 <e p="{9df30ff1-c51d-448e-8ebc-029278c34910}.xml" t="Include" />
                 <e p="{a50c7638-c4e3-471d-886c-59454007a6bc}.xml" t="Include" />
+                <e p="{a93f88a3-0234-4a43-93c7-7e7f68c82bfd}.xml" t="Include" />
                 <e p="{bb101118-cf07-456a-bc78-a4769403ea60}.xml" t="Include" />
                 <e p="{bca55c5c-2a7c-43bd-98e8-5797a9f15d9e}.xml" t="Include" />
                 <e p="{bf0cf9dd-f35c-42a5-9e43-ed71bc23cdfd}.xml" t="Include" />
+                <e p="{cc80b6f0-4ddd-443b-8573-e85e933b33fb}.xml" t="Include" />
+                <e p="{d249bc6d-5028-4b59-8669-088d40078c1f}.xml" t="Include" />
                 <e p="{d71305a9-c860-4d08-88ce-f89495e87383}.xml" t="Include" />
                 <e p="{e8989562-7c79-4ea3-a4b1-fe7660bd5d02}.xml" t="Include" />
                 <e p="{eae4f452-102e-45c1-aa46-871b50d5ce07}.xml" t="Include" />
+                <e p="{f45702f7-7782-4a48-a751-cb533a09c658}.xml" t="Include" />
+                <e p="{fd398326-f603-42c2-a751-da9c7578eed7}.xml" t="Include" />
               </e>
               <e p="Bank" t="Include">
                 <e p="{2ded6f53-0e57-4b70-b048-e7b811f8e9f1}.xml" t="Include" />
@@ -77,6 +96,8 @@
               <e p="Event" t="Include">
                 <e p="{490e4177-b5fe-4a72-85ee-efd44cdc7979}.xml" t="Include" />
                 <e p="{dc2edc08-40be-4987-b9cd-49cd63de84ee}.xml" t="Include" />
+                <e p="{f363f94f-5c21-4e3f-97ed-6a99eeb1e361}.xml" t="Include" />
+                <e p="{f406c121-08c8-47b6-a7f9-be5ba38ded96}.xml" t="Include" />
               </e>
               <e p="EventFolder" t="Include">
                 <e p="{a1b6c649-fc30-4372-8244-eefcf3b26572}.xml" t="Include" />
@@ -85,6 +106,7 @@
               <e p="Mixer.xml" t="Include" />
               <e p="ParameterPreset" t="Include">
                 <e p="{6177ffeb-018f-411a-ac6d-541cca7cb5e7}.xml" t="Include" />
+                <e p="{f482ad67-453b-4e88-b6fb-fffcb143a25f}.xml" t="Include" />
               </e>
               <e p="ParameterPresetFolder" t="Include">
                 <e p="{8140a4f1-5cc6-4dc6-9b1a-1b0714cb02c8}.xml" t="Include" />
@@ -111,6 +133,7 @@
             </e>
             <e p="PlayerInfos.cs" t="Include" />
             <e p="ServerScripts" t="Include">
+              <e p="ClientMessageData.cs" t="Include" />
               <e p="CustomServerNetworkManager.cs" t="Include" />
               <e p="GameManager.cs" t="Include" />
               <e p="ServerHUD.cs" t="Include" />
@@ -832,6 +855,75 @@
             </e>
           </e>
         </e>
+        <e p="Plugins" t="Include">
+          <e p="Fmod" t="Include">
+            <e p="addons" t="Include">
+              <e p="ResonanceAudio" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="FmodResonanceAudioRoomEditor.cs" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="FmodResonanceAudio.cs" t="Include" />
+                  <e p="FmodResonanceAudioRoom.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="src" t="Include">
+              <e p="Editor" t="Include">
+                <e p="BankRefDrawer.cs" t="Include" />
+                <e p="CreateEventPopup.cs" t="Include" />
+                <e p="EditorBankRef.cs" t="Include" />
+                <e p="EditorEventRef.cs" t="Include" />
+                <e p="EditorParamRef.cs" t="Include" />
+                <e p="EditorUtils.cs" t="Include" />
+                <e p="EventBrowser.cs" t="Include" />
+                <e p="EventCache.cs" t="Include" />
+                <e p="EventManager.cs" t="Include" />
+                <e p="EventRefDrawer.cs" t="Include" />
+                <e p="FindAndReplace.cs" t="Include" />
+                <e p="LogViewer.cs" t="Include" />
+                <e p="ParamRefDrawer.cs" t="Include" />
+                <e p="SettingsEditor.cs" t="Include" />
+                <e p="StudioBankLoaderEditor.cs" t="Include" />
+                <e p="StudioEventEmitterEditor.cs" t="Include" />
+                <e p="StudioEventEmitterGizmoDrawer.cs" t="Include" />
+                <e p="StudioGlobalParameterTriggerEditor.cs" t="Include" />
+                <e p="StudioListenerEditor.cs" t="Include" />
+                <e p="StudioParameterTriggerEditor.cs" t="Include" />
+                <e p="Timeline" t="Include">
+                  <e p="FMODEventPlayableEditor.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Runtime" t="Include">
+                <e p="BankRefAttribute.cs" t="Include" />
+                <e p="EventHandler.cs" t="Include" />
+                <e p="EventRefAttribute.cs" t="Include" />
+                <e p="FMODRuntimeManagerOnGUIHelper.cs" t="Include" />
+                <e p="ParamRef.cs" t="Include" />
+                <e p="ParamRefAttribute.cs" t="Include" />
+                <e p="RuntimeManager.cs" t="Include" />
+                <e p="RuntimeUtils.cs" t="Include" />
+                <e p="Settings.cs" t="Include" />
+                <e p="StudioBankLoader.cs" t="Include" />
+                <e p="StudioEventEmitter.cs" t="Include" />
+                <e p="StudioGlobalParameterTrigger.cs" t="Include" />
+                <e p="StudioListener.cs" t="Include" />
+                <e p="StudioParameterTrigger.cs" t="Include" />
+                <e p="Timeline" t="Include">
+                  <e p="FMODEventPlayable.cs" t="Include" />
+                  <e p="FMODEventTrack.cs" t="Include" />
+                </e>
+                <e p="wrapper" t="Include">
+                  <e p="fmod.cs" t="Include" />
+                  <e p="fmod_android.cs" t="Include" />
+                  <e p="fmod_dsp.cs" t="Include" />
+                  <e p="fmod_errors.cs" t="Include" />
+                  <e p="fmod_studio.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="SimpleCameraController.cs" t="Include" />
         </e>
@@ -854,6 +946,7 @@
         </e>
         <e p="XuX's folder" t="Include">
           <e p="Scripts" t="Include">
+            <e p="Arrow.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="SpawnerPlayer.cs" t="Include" />
           </e>
