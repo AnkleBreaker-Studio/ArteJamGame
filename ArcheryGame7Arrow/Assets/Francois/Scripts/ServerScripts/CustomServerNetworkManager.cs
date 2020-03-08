@@ -19,7 +19,6 @@ public class CustomServerNetworkManager : NetworkManager
 
     public List<GameObject> PlayerList = new List<GameObject>();
 
-
     public override void OnStartServer()
     {
         base.OnStartServer();
@@ -47,10 +46,16 @@ public class CustomServerNetworkManager : NetworkManager
         PlayerList.Add(conn.identity.transform.gameObject);
     }
 
+
+    public override void OnServerRemovePlayer(NetworkConnection conn, NetworkIdentity player)
+    {
+        PlayerList.Remove(conn.identity.transform.gameObject);
+        base.OnServerRemovePlayer(conn, player);
+    }
+
     //keeping track of Clients disconnecting.
     public override void OnServerDisconnect(NetworkConnection conn)
     {
-        PlayerList.Remove(conn.identity.transform.gameObject);
         connectedClients -= 1;
         clientsInfoText.text = "Connected Clients : " + connectedClients;
         base.OnServerDisconnect(conn);

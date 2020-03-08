@@ -14,10 +14,6 @@ public class PlayerGotKilledMessage : MessageBase
     
 }
 
-public class GameStartingMessage : MessageBase
-{
-
-}
 
 public class SetPlayerTeamMessage : MessageBase
 {
@@ -29,6 +25,12 @@ public class SetPlayerTeamMessage : MessageBase
 public class GameReadyToStartMessage : MessageBase
 {
 }
+
+public class GameStartingMessage : MessageBase
+{
+
+}
+
 
 public class GameStartMessage : MessageBase
 {
