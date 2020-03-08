@@ -50,10 +50,10 @@ public class GameManager : NetworkBehaviour
 
     public void ServerHandlerRegister()
     {
-        NetworkServer.RegisterHandler<ClientReadyToStartMessage>(ClientReadyMessageRecieved);
-        NetworkServer.RegisterHandler<PlayerDeadMessage>(PlayerDeadMessageRecieved);
-        NetworkServer.RegisterHandler<ClientReadyToEndGameMessage>(ClientReadyToEndGameMessageReceived);
-        NetworkServer.RegisterHandler<ClientOutOfArrowMessage>(ClientOutOfArrowMessageReceived);
+        NetworkServer.RegisterHandler<ClientReadyToStartMessage>(ClientReadyMessageRecieved, false);
+        NetworkServer.RegisterHandler<PlayerDeadMessage>(PlayerDeadMessageRecieved, false);
+        NetworkServer.RegisterHandler<ClientReadyToEndGameMessage>(ClientReadyToEndGameMessageReceived, false);
+        NetworkServer.RegisterHandler<ClientOutOfArrowMessage>(ClientOutOfArrowMessageReceived, false);
     }
 
     

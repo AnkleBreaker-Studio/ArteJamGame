@@ -51,16 +51,16 @@ public class ClientGameManager : MonoBehaviour
     
     public void RegisterHandlers()
     {
-        NetworkClient.RegisterHandler<PlayerConnectedMessage>(PlayerConnectedMessageReceived);
-        NetworkClient.RegisterHandler<PlayerGotKilledMessage>(PlayerGotKilledMessageReceived);
-        NetworkClient.RegisterHandler<GameStartingMessage>(GameStartingMessageReceived);
-        NetworkClient.RegisterHandler<GameReadyToStartMessage>(GameReadyToStartMessageReceived);
-        NetworkClient.RegisterHandler<SetPlayerTeamMessage>(SetPlayerTeamMessageReceived);
-        NetworkClient.RegisterHandler<GameStartMessage>(GameStartMessageReceived);
-        NetworkClient.RegisterHandler<RedTeamWonMessage>(RedTeamWonMessageReceived);
-        NetworkClient.RegisterHandler<BlueTeamWonMessage>(BlueTeamWonMessageReceived);
-        NetworkClient.RegisterHandler<DrawGameMessage>(DrawGameMessageReceived);
-        NetworkClient.RegisterHandler<DisconnectMessage>(DisconnectMessageReceived);
+        NetworkClient.RegisterHandler<PlayerConnectedMessage>(PlayerConnectedMessageReceived, false);
+        NetworkClient.RegisterHandler<PlayerGotKilledMessage>(PlayerGotKilledMessageReceived, false);
+        NetworkClient.RegisterHandler<GameStartingMessage>(GameStartingMessageReceived, false);
+        NetworkClient.RegisterHandler<GameReadyToStartMessage>(GameReadyToStartMessageReceived, false);
+        NetworkClient.RegisterHandler<SetPlayerTeamMessage>(SetPlayerTeamMessageReceived, false);
+        NetworkClient.RegisterHandler<GameStartMessage>(GameStartMessageReceived, false);
+        NetworkClient.RegisterHandler<RedTeamWonMessage>(RedTeamWonMessageReceived, false);
+        NetworkClient.RegisterHandler<BlueTeamWonMessage>(BlueTeamWonMessageReceived, false);
+        NetworkClient.RegisterHandler<DrawGameMessage>(DrawGameMessageReceived, false);
+        NetworkClient.RegisterHandler<DisconnectMessage>(DisconnectMessageReceived, false);
     }
 
     private void DisconnectMessageReceived(NetworkConnection arg1, DisconnectMessage arg2)
