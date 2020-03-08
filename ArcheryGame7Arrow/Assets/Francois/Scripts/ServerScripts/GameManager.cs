@@ -53,7 +53,10 @@ public class GameManager : NetworkBehaviour
         NetworkServer.RegisterHandler<ClientReadyToStartMessage>(ClientReadyMessageRecieved);
         NetworkServer.RegisterHandler<PlayerDeadMessage>(PlayerDeadMessageRecieved);
         NetworkServer.RegisterHandler<ClientReadyToEndGameMessage>(ClientReadyToEndGameMessageReceived);
+        NetworkServer.RegisterHandler<ClientOutOfArrowMessage>(ClientOutOfArrowMessageReceived);
     }
+
+    
 
     private void ClientReadyToEndGameMessageReceived(NetworkConnection arg1, ClientReadyToEndGameMessage arg2)
     {
@@ -215,5 +218,11 @@ public class GameManager : NetworkBehaviour
         if (a == null)
             a = RedTeam.Players.SingleOrDefault(x => x.NetworkId == NetId.netId);
         return a;
+    }
+    
+    private void ClientOutOfArrowMessageReceived(NetworkConnection arg1, ClientOutOfArrowMessage arg2)
+    {
+        PlayerInfos pInfo = GetPlayerTeam(arg1.identity);
+        pInfo.HasArrow = false;
     }
 }

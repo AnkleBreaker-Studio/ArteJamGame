@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\franc\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -56,6 +56,7 @@
                 <e p="{0bea5229-de5d-43b0-8d93-906cebd0982a}.xml" t="Include" />
                 <e p="{11a7d226-bab4-4150-bd1b-ecb75780e634}.xml" t="Include" />
                 <e p="{15afaa0e-932d-451e-8714-1a9584782156}.xml" t="Include" />
+                <e p="{1793bd9e-1f27-4125-87c3-43f149ce64b0}.xml" t="Include" />
                 <e p="{18beeab5-c525-4ce5-b3fc-62619a6a16f8}.xml" t="Include" />
                 <e p="{21c1f2c5-fade-4a3e-84d1-6976f72ecade}.xml" t="Include" />
                 <e p="{252cb86a-5e50-437f-906e-fa552ed565ea}.xml" t="Include" />
@@ -94,6 +95,7 @@
                 <e p="{cd261aa2-cd14-4e10-82c8-79fdd41cc5b0}.xml" t="Include" />
                 <e p="{d249bc6d-5028-4b59-8669-088d40078c1f}.xml" t="Include" />
                 <e p="{d71305a9-c860-4d08-88ce-f89495e87383}.xml" t="Include" />
+                <e p="{da492e36-2b7d-48fe-82e7-6ca55f7bfc4e}.xml" t="Include" />
                 <e p="{de2d88fa-c896-4fbb-89e0-b7618eadb326}.xml" t="Include" />
                 <e p="{e8989562-7c79-4ea3-a4b1-fe7660bd5d02}.xml" t="Include" />
                 <e p="{eae4f452-102e-45c1-aa46-871b50d5ce07}.xml" t="Include" />
@@ -116,7 +118,9 @@
               </e>
               <e p="Event" t="Include">
                 <e p="{033e7b2c-93cd-46dd-890c-2fee5c81cc46}.xml" t="Include" />
+                <e p="{47d2f1fc-1a1d-4abe-8e40-7394a16b68b8}.xml" t="Include" />
                 <e p="{490e4177-b5fe-4a72-85ee-efd44cdc7979}.xml" t="Include" />
+                <e p="{822e8902-ebe0-41d8-915e-890b23d2dac2}.xml" t="Include" />
                 <e p="{b1dff473-c02a-47b3-a47b-8572f415d3f5}.xml" t="Include" />
                 <e p="{d0842640-06c1-4ba7-b540-7b926bc457bd}.xml" t="Include" />
                 <e p="{dc2edc08-40be-4987-b9cd-49cd63de84ee}.xml" t="Include" />
@@ -152,6 +156,7 @@
         <e p="Francois" t="Include">
           <e p="Scripts" t="Include">
             <e p="ClientScripts" t="Include">
+              <e p="ClientGameManager.cs" t="Include" />
               <e p="ClientHUD.cs" t="Include" />
               <e p="CustomClientNetworkManager.cs" t="Include" />
             </e>
