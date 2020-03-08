@@ -8,6 +8,10 @@ using UnityEngine;
 
 public class ClientReadyToStartMessage : MessageBase
 {
+}
+
+public class ClientSpawnPlayerMessage : MessageBase
+{
     public NetworkIdentity NetId;
 }
 
