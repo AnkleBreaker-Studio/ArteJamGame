@@ -1067,7 +1067,6 @@
         <e p="XuX's folder" t="Include">
           <e p="Scripts" t="Include">
             <e p="Arrow.cs" t="Include" />
-            <e p="PlayerAnimator.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="SpawnerPlayer.cs" t="Include" />
           </e>
