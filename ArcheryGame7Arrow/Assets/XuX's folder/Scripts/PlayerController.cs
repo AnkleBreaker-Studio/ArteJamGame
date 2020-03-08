@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Camera cam;
     private NetworkTransform playerTransform;
-    private NetworkAnimator animator;
+    private Animator animator;
     private float _horizontalInput;
     private Vector3 mousePos;
     private Rigidbody rb;
@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
         playerTransform = GetComponent<NetworkTransform>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<NetworkAnimator>();
-        animator.animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        GetComponent<NetworkAnimator>().animator = animator;
     }
 
     void Update()
@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         rb.velocity = Vector2.up * jumpForce;
+        animator.SetBool("isJumping", true);
+        animator.SetBool("test", true);
         Debug.Log("jump!");
     }
 }
