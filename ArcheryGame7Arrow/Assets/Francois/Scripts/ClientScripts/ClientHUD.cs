@@ -9,9 +9,8 @@ using UnityEngine.SceneManagement;
 public class ClientHUD : MonoBehaviour
 {
 
-    public GameObject connectToServer, disConnect, addressPanel, connecting, disConnectMessage;
-    public InputField portText, ipText, passwordText;
-    public Text connectingText;
+    public GameObject connectToServer, disConnect, addressPanel;
+    public UIInput NguiportText, NguiipText, NguipasswordText;
 
     private NetworkManager manager;
     private TelepathyTransport _telepathyTransport;
@@ -30,12 +29,12 @@ public class ClientHUD : MonoBehaviour
         if (PlayerPrefs.HasKey("nwPortC"))
         {
             _telepathyTransport.port = (ushort) Convert.ToInt32(PlayerPrefs.GetString("nwPortC"));
-            portText.text = PlayerPrefs.GetString("nwPortC");
+            NguiportText.text = PlayerPrefs.GetString("nwPortC");
         }
         if (PlayerPrefs.HasKey("IPAddressC"))
         {
             manager.networkAddress = PlayerPrefs.GetString("IPAddressC");
-            ipText.text = PlayerPrefs.GetString("IPAddressC");
+            NguiipText.text = PlayerPrefs.GetString("IPAddressC");
         }
     }
 
@@ -49,10 +48,8 @@ public class ClientHUD : MonoBehaviour
             else
             {
                // manager.StopClient();
-                connectingText.text = "Failed To Connect !!";
                 if (connectionFaileTimer > 0)
                     connectionFaileTimer -= Time.deltaTime;
-                else connecting.SetActive(false);
             }
         }
         if (connected)
@@ -62,18 +59,15 @@ public class ClientHUD : MonoBehaviour
 
     public void ConnectToServer()
     {
-        if (ipText.text != "" && portText.text != "")//is the information filled in ?.
+        if (NguiipText.text != "" && NguiportText.text != "")//is the information filled in ?.
         {
             connected = false;
-            disConnectMessage.SetActive(false);
-            connectingText.text = "Connecting !!";
-            connecting.SetActive(true);
             connectingTimer = 8;//how long we try to connect until the fail message appears.
             connectionFaileTimer = 2;//how long the fail message is showing.
-            manager.networkAddress = ipText.text;
-            _telepathyTransport.port = (ushort) Convert.ToInt32(portText.text);
-            PlayerPrefs.SetString("IPAddressC", ipText.text);//saving the filled in ip.
-            PlayerPrefs.SetString("nwPortC", portText.text);//saving the filled in port.
+            manager.networkAddress = NguiipText.text;
+            _telepathyTransport.port = (ushort) Convert.ToInt32(NguiportText.text);
+            PlayerPrefs.SetString("IPAddressC", NguiipText.text);//saving the filled in ip.
+            PlayerPrefs.SetString("nwPortC", NguiportText.text);//saving the filled in port.
             SceneManager.LoadScene(manager.onlineScene);
             manager.StartClient();
            // manager.StartClient();
@@ -84,8 +78,6 @@ public class ClientHUD : MonoBehaviour
     public void ConnectSuccses()
     {
         connected = true;
-        if (connecting != null)
-            connecting.SetActive(false);
         if (disConnect != null)
          disConnect.SetActive(true);
         if (connectToServer != null)
@@ -102,8 +94,6 @@ public class ClientHUD : MonoBehaviour
 
     public void DisConnect(bool showMessage)
     {
-        if (showMessage)
-            disConnectMessage.SetActive(true);
         if (connectToServer != null)
             connectToServer.SetActive(true);
         if (disConnect != null)

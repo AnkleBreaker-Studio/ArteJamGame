@@ -21,6 +21,8 @@ public class ClientGameManager : NetworkBehaviour
 {
     public List<ClientTeamInfo> playerList = new List<ClientTeamInfo>();
 
+    private CustomClientNetworkManager _networkManager;
+    
     #region Singleton
     private static ClientGameManager instance = null;
     public static ClientGameManager Instance
@@ -43,6 +45,7 @@ public class ClientGameManager : NetworkBehaviour
     
     private void Start()
     {
+        _networkManager = GetComponent<CustomClientNetworkManager>();
     }
 
     private void OnConnectedToServer()
@@ -86,6 +89,19 @@ public class ClientGameManager : NetworkBehaviour
     
     public IEnumerator StartGame()
     {
+        _networkManager.GameStartingUiLabel.text = "7";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "6";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "5";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "4";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "3";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "2";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "1";
         yield return null;
         ClientReadyToStartMessage msg = new ClientReadyToStartMessage();
         NetworkClient.Send(msg);
@@ -127,6 +143,8 @@ public class ClientGameManager : NetworkBehaviour
     
     private void GameReadyToStartMessageReceived(NetworkConnection arg1, GameReadyToStartMessage arg2)
     {
+        _networkManager.WaitingForPlayerUI.SetActive(false);
+        _networkManager.GameStartingUI.SetActive(true);
         print("GameReadyToStart");
         if (NetworkClient.connection == arg1)
             StartCoroutine(StartGame());
@@ -139,6 +157,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void GameStartMessageReceived(NetworkConnection arg1, GameStartMessage arg2)
     {
+        _networkManager.GameStartingUI.SetActive(false);
         print("startGame");
         /*Starting the round*/
     }
