@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = Vector2.up * jumpForce;
         animator.SetBool("isJumping", true);
-        animator.SetBool("test", true);
         Debug.Log("jump!");
     }
 }
