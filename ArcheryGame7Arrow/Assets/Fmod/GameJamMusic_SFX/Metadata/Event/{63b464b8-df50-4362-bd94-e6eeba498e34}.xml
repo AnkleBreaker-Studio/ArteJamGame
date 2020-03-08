@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{63b464b8-df50-4362-bd94-e6eeba498e34}">
 		<property name="name">
-			<value>Menu UI</value>
+			<value>Menu UI SFX</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>

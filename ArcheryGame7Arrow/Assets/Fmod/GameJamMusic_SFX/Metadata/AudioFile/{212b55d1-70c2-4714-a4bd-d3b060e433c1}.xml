@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{212b55d1-70c2-4714-a4bd-d3b060e433c1}">
+		<property name="assetPath">
+			<value>not fire.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.23510204081632652</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{977c8b35-3d3f-42b9-b581-81986c630c86}</destination>
+		</relationship>
+	</object>
+</objects>

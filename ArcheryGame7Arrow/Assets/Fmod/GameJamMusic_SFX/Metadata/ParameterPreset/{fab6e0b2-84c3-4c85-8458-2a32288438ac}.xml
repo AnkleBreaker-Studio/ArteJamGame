@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="ParameterPreset" id="{fab6e0b2-84c3-4c85-8458-2a32288438ac}">
+		<property name="name">
+			<value>Fanfares </value>
+		</property>
+		<relationship name="folder">
+			<destination>{8140a4f1-5cc6-4dc6-9b1a-1b0714cb02c8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c52d5510-6df3-4df4-a5ce-f7150910262c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c52d5510-6df3-4df4-a5ce-f7150910262c}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Win</value>
+			<value>Draw</value>
+			<value>Lose</value>
+		</property>
+		<property name="isHeld">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>
