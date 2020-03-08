@@ -167,7 +167,7 @@
 			<value>3.8257682541775138</value>
 		</property>
 		<property name="length">
-			<value>3.10843670651923</value>
+			<value>2.8693261906331351</value>
 		</property>
 		<property name="timelockedOffset">
 			<value>0.033866995073891626</value>
@@ -1042,7 +1042,7 @@
 			<value>5.7419950738916254</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-4</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{e49d1bc3-e149-4583-bf04-471a65131084}">
@@ -1050,7 +1050,7 @@
 			<value>0.059777628971523653</value>
 		</property>
 		<property name="value">
-			<value>-32</value>
+			<value>-27</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{b8afbbf4-f54f-4ff2-8279-07db96b33114}">
@@ -1058,7 +1058,7 @@
 			<value>5.7419950738916254</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>4</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{eae0e55a-85db-4c1f-b97e-8380391a99cb}">
@@ -1074,7 +1074,7 @@
 			<value>5.7635467980295569</value>
 		</property>
 		<property name="value">
-			<value>-4</value>
+			<value>-7</value>
 		</property>
 	</object>
 </objects>
