@@ -105,6 +105,7 @@ public class ClientGameManager : NetworkBehaviour
         yield return null;
         ClientSpawnPlayerMessage msg = new ClientSpawnPlayerMessage();
         NetworkClient.Send(msg);
+        _networkManager.GameStartingUI.SetActive(false);
     }
     
     private void DrawGameMessageReceived(NetworkConnection arg1, DrawGameMessage arg2)
