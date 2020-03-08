@@ -4008,11 +4008,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{1b0a2a06-bf7a-496d-8d0a-e49f11892d28}</destination>
@@ -4035,11 +4035,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{c2e75a25-dd6e-4aa0-8bf5-3ff9bdb9ab35}</destination>
@@ -4062,11 +4062,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{f2d22963-8d86-4962-aab3-992980b10b79}</destination>
@@ -4089,11 +4089,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{423d5f9d-9e77-4326-968a-147ef700ca06}</destination>
@@ -4116,11 +4116,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{f07f460e-0424-4102-93be-3312013b7adf}</destination>
@@ -4143,11 +4143,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{43453efe-ffb8-4dfa-9d32-12dd40bf429b}</destination>
@@ -4170,11 +4170,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{5541a3ab-bda8-482d-9099-e4b330e56bde}</destination>
@@ -4197,11 +4197,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{10f95dce-890a-4239-a5a1-8ce0fcc7a2ec}</destination>
@@ -4224,11 +4224,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{a5f92f4a-21fe-4925-88f4-1c3c159be0dd}</destination>
@@ -4251,11 +4251,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{6771c886-12b6-412c-a352-8c92ea3aa0fc}</destination>
@@ -4278,11 +4278,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{aec3dabb-0c62-4c3e-8d39-524beaf436ff}</destination>
@@ -4305,11 +4305,11 @@
 		<property name="length">
 			<value>16.013061224489796</value>
 		</property>
-		<property name="startOffset">
-			<value>5</value>
-		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-15</value>
+		</property>
+		<property name="pitch">
+			<value>1.80000007</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{524f0d9b-0ae4-4c5f-b6e4-01f431d8e3ea}</destination>
