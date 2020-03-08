@@ -17,7 +17,7 @@ public class PlayerGotKilledMessage : MessageBase
 
 public class SetPlayerTeamMessage : MessageBase
 {
-    public NetworkConnection NetworkConnection;
+    public int NetId;
     public Team Team;
     public Color TeamColor;
 }
