@@ -16,6 +16,15 @@ public class PlayerDeadMessage : MessageBase
     public NetworkIdentity NetId;
 }
 
+public class ClientReadyToEndGameMessage : MessageBase
+{
+}
+
+public class ClientOutOfArrowMessage : MessageBase
+{
+}
+
+
 public static class ClientMessageData
 {
     

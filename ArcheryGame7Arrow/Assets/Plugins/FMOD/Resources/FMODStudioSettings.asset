@@ -15,7 +15,7 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: Assets\Fmod\GameJamMusic_SFX\GameJamMusic_SFX.fspro
+  sourceProjectPath: Assets/Fmod/GameJamMusic_SFX/GameJamMusic_SFX.fspro
   sourceBankPath: Assets\Fmod\GameJamMusic_SFX\Build
   SourceBankPathUnformatted: 
   AutomaticEventLoading: 1

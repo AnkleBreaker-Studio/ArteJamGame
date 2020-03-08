@@ -35,7 +35,20 @@ public class GameStartMessage : MessageBase
     
 }
 
+public class RedTeamWonMessage : MessageBase
+{
+    
+}
 
+public class BlueTeamWonMessage : MessageBase
+{
+    
+}
+
+public class DrawGameMessage : MessageBase
+{
+    
+}
 
 public static class ServerMessageData
 {

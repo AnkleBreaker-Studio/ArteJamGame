@@ -19,7 +19,6 @@ public class CustomServerNetworkManager : NetworkManager
 
     public List<GameObject> PlayerList = new List<GameObject>();
 
-    //Server Side
 
     public override void OnStartServer()
     {
@@ -36,7 +35,6 @@ public class CustomServerNetworkManager : NetworkManager
         PCMsg.ConnectionId = conn.connectionId;
         base.OnServerConnect(conn);
         connectedClients += 1;
-        Debug.Log("Player joined the server :"  + connectedClients);
         clientsInfoText.text = "Connected Clients : " + connectedClients;
         StringMessage msg = new StringMessage(serverPassword);
         conn.Send(msg);
@@ -47,15 +45,15 @@ public class CustomServerNetworkManager : NetworkManager
     {
         base.OnServerAddPlayer(conn);
         PlayerList.Add(conn.identity.transform.gameObject);
-        Debug.Log("PlayerSpawned");
     }
 
     //keeping track of Clients disconnecting.
     public override void OnServerDisconnect(NetworkConnection conn)
     {
-        base.OnServerDisconnect(conn);
+        PlayerList.Remove(conn.identity.transform.gameObject);
         connectedClients -= 1;
         clientsInfoText.text = "Connected Clients : " + connectedClients;
+        base.OnServerDisconnect(conn);
     }
 
     private void OnPlayerDisconnected(NetworkConnection player)
