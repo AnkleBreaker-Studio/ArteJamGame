@@ -2227,7 +2227,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: 0 / 4 Players Connected
+  mText: 'Game is Starting In :'
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
@@ -2421,14 +2421,14 @@ MonoBehaviour:
   mWidth: 390
   mHeight: 328
   mDepth: 1
-  mMat: {fileID: 0}
+  mMat: {fileID: 2100000, guid: d650d98b3c4028a4a8b7225c1a6482f8, type: 2}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 1.1890244
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: f34f0fe2ec93b439d9aca85f22c8c024, type: 3}
   mText: 7
   mFontSize: 800
   mFontStyle: 0
