@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{63a5f70c-e1b5-495b-8a57-78602b33fe5f}">
+		<property name="assetPath">
+			<value>Dying-SoundBible.com-1255481835.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.063673469387755</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{977c8b35-3d3f-42b9-b581-81986c630c86}</destination>
+		</relationship>
+	</object>
+</objects>
