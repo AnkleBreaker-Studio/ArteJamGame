@@ -138,6 +138,7 @@ public class GameManager : NetworkBehaviour
     {
         if (IsTeamReady(BlueTeam) && IsTeamReady(RedTeam) && !gameStarted)
         {
+            print("test");
             gameStarted = true;
             GameStartMessage msg = new GameStartMessage();
             NetworkServer.SendToAll(msg);
