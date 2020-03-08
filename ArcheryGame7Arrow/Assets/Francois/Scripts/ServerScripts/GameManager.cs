@@ -48,7 +48,7 @@ public class GameManager : NetworkBehaviour
     }
 
 
-    private void ServerHandlerRegister()
+    public void ServerHandlerRegister()
     {
         NetworkServer.RegisterHandler<ClientReadyToStartMessage>(ClientReadyMessageRecieved);
         NetworkServer.RegisterHandler<PlayerDeadMessage>(PlayerDeadMessageRecieved);
@@ -72,7 +72,6 @@ public class GameManager : NetworkBehaviour
         BlueTeam = new TeamInfo();
         RedTeam.TeamColor = Color.red;
         BlueTeam.TeamColor = Color.blue;
-        ServerHandlerRegister();
     }
 
     private void FixedUpdate()

@@ -14,10 +14,11 @@ public class CustomClientNetworkManager : NetworkManager
     public string serverPassword;
 
     //Client Side
-    public override void OnStartClient(NetworkClient client)
+    public override void OnStartClient()
     {
-        base.OnStartClient(client);
+        base.OnStartClient();
         RegisterClientHandles();
+        ClientGameManager.Instance.RegisterHandlers();
     }
 
     public override void OnClientConnect(NetworkConnection conn)
