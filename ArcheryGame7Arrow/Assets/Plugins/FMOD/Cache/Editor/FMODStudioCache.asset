@@ -16,7 +16,7 @@ MonoBehaviour:
   Min: 0
   Max: 4
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8345734107572670999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +68,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &-7722524336284076021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Game Music/Fanfares stage
+  m_EditorClassIdentifier: 
+  Name: Fanfares stage
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-7296832761689739077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +118,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6714215693371373554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,12 +134,12 @@ MonoBehaviour:
   Path: event:/Bow and Arrow/Bow SFX
   guid: 08dc2edcbe408749b9cd49cd63de84ee
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -1504242851412776222}
+  - {fileID: 5659761773412697922}
   MinDistance: 1
   MaxDistance: 20
   Length: 5858
@@ -256,7 +273,7 @@ MonoBehaviour:
   Path: event:/Game SFX/Game Countdown SFX
   guid: 526ff487c627894582deed9ebb7a432b
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -264,6 +281,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 11610
+--- !u!114 &-4753410814535378976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jump and landing/Jump or Landing
+  m_EditorClassIdentifier: 
+  Name: Jump or Landing
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-4724970680703327789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +354,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &-3917528824588737288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 'parameter:/Fanfares/Fanfares '
+  m_EditorClassIdentifier: 
+  Name: 'Fanfares '
+  Min: 0
+  Max: 3
+  Default: 1
+  Exists: 1
 --- !u!114 &-3884861473241199998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +386,7 @@ MonoBehaviour:
   Path: event:/Character Sounds/Dying SFX
   guid: 73f4dfb12ac0b347a47b8572f415d3f5
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -359,7 +410,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3296315674028857064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,12 +477,12 @@ MonoBehaviour:
   Path: event:/Game SFX/Menu UI SFX
   guid: b864b46350df6243bd94e6eeba498e34
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 4804815482871924697}
+  - {fileID: -587143971248086398}
   MinDistance: 0
   MaxDistance: 0
   Length: 745
@@ -471,7 +522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Fmod/GameJamMusic_SFX/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637192823101837694
+  lastModified: 637192823901551456
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -697,7 +748,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1244043394971462352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,12 +817,12 @@ MonoBehaviour:
   Path: event:/Character Sounds/Jump and landing
   guid: 277552a175d14b41b20a6cecdc2fa91b
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -3444169725418432224}
+  - {fileID: -4753410814535378976}
   MinDistance: 1
   MaxDistance: 20
   Length: 2250
@@ -824,7 +875,7 @@ MonoBehaviour:
   Path: event:/Environment/Enviroment
   guid: aa560bf547728f4f9a8d6f655c6345c3
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -832,6 +883,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 250538
+--- !u!114 &-587143971248086398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu UI SFX/UI state
+  m_EditorClassIdentifier: 
+  Name: UI state
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &-220685961918441966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,7 +915,7 @@ MonoBehaviour:
   Path: event:/Music/Menu Music
   guid: 77410e49feb5724a85eeefd44cdc7979
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -869,7 +937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -2774774656038498540}
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   EditorEvents:
   - {fileID: 8192734192765847080}
   - {fileID: -6714215693371373554}
@@ -886,10 +954,10 @@ MonoBehaviour:
   - {fileID: 6237218331128382934}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   StringsBanks:
   - {fileID: -2774774656038498540}
-  stringsBankWriteTime: 637192823101837694
+  stringsBankWriteTime: 637192823901551456
   cacheVersion: 3
 --- !u!114 &178000522976232983
 MonoBehaviour:
@@ -928,12 +996,12 @@ MonoBehaviour:
   Path: event:/Bow and Arrow/Arrow SFX
   guid: 4ff963f3215c3f4e97ed6a99eeb1e361
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -8396025762527836992}
+  - {fileID: 6450659773234956436}
   MinDistance: 1
   MaxDistance: 20
   Length: 22000
@@ -986,12 +1054,12 @@ MonoBehaviour:
   Path: event:/Character Sounds/Walk and Run SFX
   guid: 2c7b3e03cd93dd46890c2fee5c81cc46
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 5605612550632915218}
+  - {fileID: 5427664524455536203}
   MinDistance: 1
   MaxDistance: 20
   Length: 1920
@@ -1044,7 +1112,7 @@ MonoBehaviour:
   Path: event:/Game SFX/Game Player disconnected server SFX
   guid: fcf1d2471d1abe4a8e407394a16b68b8
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1175,7 +1243,7 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4955110609645846475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1208,12 +1276,12 @@ MonoBehaviour:
   Path: event:/Music/Game Music
   guid: 21c106f4c808b647a7f9be5ba38ded96
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8582743246462558527}
+  - {fileID: -7722524336284076021}
   MinDistance: 0
   MaxDistance: 0
   Length: 125500
@@ -1234,6 +1302,23 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &5427664524455536203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Walk and Run SFX/Speed switch
+  m_EditorClassIdentifier: 
+  Name: Speed switch
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &5458452759210973760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,6 +1368,23 @@ MonoBehaviour:
   Name: Speed switch
   Min: 0
   Max: 2
+  Default: 0
+  Exists: 0
+--- !u!114 &5659761773412697922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Bow SFX/Bow stage
+  m_EditorClassIdentifier: 
+  Name: Bow stage
+  Min: 0
+  Max: 3
   Default: 0
   Exists: 1
 --- !u!114 &5883709949843436566
@@ -1334,12 +1436,12 @@ MonoBehaviour:
   Path: event:/Game SFX/Fanfares
   guid: 1d9d5d3452f4fc4798afe4d7a9d43f0a
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -7047457517871446971}
+  - {fileID: -3917528824588737288}
   MinDistance: 0
   MaxDistance: 0
   Length: 0
@@ -1360,6 +1462,23 @@ MonoBehaviour:
   Max: 4
   Default: 0
   Exists: 0
+--- !u!114 &6450659773234956436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Arrow SFX/Arrow Hit
+  m_EditorClassIdentifier: 
+  Name: Arrow Hit
+  Min: 0
+  Max: 4
+  Default: 0
+  Exists: 1
 --- !u!114 &6471289792442490487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,7 +1513,7 @@ MonoBehaviour:
   lastModified: 637192823101756745
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &6762845536237362216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,6 +1566,24 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &7600793458666208316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Fmod/GameJamMusic_SFX/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637192823901182444
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7712329816929759458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1536,7 +1673,7 @@ MonoBehaviour:
   Path: event:/Game SFX/Game Player Joined server SFX
   guid: 02892e82e0ebd841915e890b23d2dac2
   Banks:
-  - {fileID: 6626904551202868957}
+  - {fileID: 7600793458666208316}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -1560,7 +1697,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8838731362803636953
 MonoBehaviour:
   m_ObjectHideFlags: 0
