@@ -14,14 +14,10 @@ public class PlayerGotKilledMessage : MessageBase
     
 }
 
-public class GameStartingMessage : MessageBase
-{
-
-}
 
 public class SetPlayerTeamMessage : MessageBase
 {
-    public NetworkIdentity NetworkIdentity;
+    public NetworkConnection NetworkConnection;
     public Team Team;
     public Color TeamColor;
 }
@@ -29,6 +25,12 @@ public class SetPlayerTeamMessage : MessageBase
 public class GameReadyToStartMessage : MessageBase
 {
 }
+
+public class GameStartingMessage : MessageBase
+{
+
+}
+
 
 public class GameStartMessage : MessageBase
 {

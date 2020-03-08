@@ -14,10 +14,11 @@ public class CustomClientNetworkManager : NetworkManager
     public string serverPassword;
 
     //Client Side
-    public override void OnStartClient(NetworkClient client)
+    public override void OnStartClient()
     {
-        base.OnStartClient(client);
+        base.OnStartClient();
         RegisterClientHandles();
+        ClientGameManager.Instance.RegisterHandlers();
     }
 
     public override void OnClientConnect(NetworkConnection conn)
@@ -43,13 +44,9 @@ public class CustomClientNetworkManager : NetworkManager
     }
 
     //Messages that need to be Registered on Server and Client Startup.
-    void RegisterServerHandles()
-    {
-        NetworkServer.RegisterHandler(MsgType.Highest + 1, OnReceivePassword);
-    }
 
     void RegisterClientHandles()
     {
-        NetworkClient.RegisterHandler(MsgType.Highest + 1, OnReceivePassword);
+        //NetworkClient.RegisterHandler<StringMessage>(OnReceivePassword);
     }
 }

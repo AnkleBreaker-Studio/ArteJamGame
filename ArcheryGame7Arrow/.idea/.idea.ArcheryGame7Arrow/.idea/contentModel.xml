@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\franc\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -55,30 +55,62 @@
                 <e p="{07aa12ad-fdc8-466c-9d65-28a7a2ee0efb}.xml" t="Include" />
                 <e p="{0bea5229-de5d-43b0-8d93-906cebd0982a}.xml" t="Include" />
                 <e p="{11a7d226-bab4-4150-bd1b-ecb75780e634}.xml" t="Include" />
+                <e p="{15afaa0e-932d-451e-8714-1a9584782156}.xml" t="Include" />
+                <e p="{1793bd9e-1f27-4125-87c3-43f149ce64b0}.xml" t="Include" />
                 <e p="{18beeab5-c525-4ce5-b3fc-62619a6a16f8}.xml" t="Include" />
+                <e p="{18ee1ce6-3466-4f79-958f-5bfebcac89cb}.xml" t="Include" />
                 <e p="{21c1f2c5-fade-4a3e-84d1-6976f72ecade}.xml" t="Include" />
+                <e p="{252cb86a-5e50-437f-906e-fa552ed565ea}.xml" t="Include" />
+                <e p="{2c6d4562-733a-48a6-ba35-d2adaeaf94d3}.xml" t="Include" />
+                <e p="{37ed4fb5-0227-4f99-bf71-122062713b6d}.xml" t="Include" />
                 <e p="{392115ea-71c9-44a7-86ce-3b1468df4543}.xml" t="Include" />
+                <e p="{3ebb0373-d4a2-4925-a54a-4dd7d30b17f3}.xml" t="Include" />
+                <e p="{3edfe154-2a06-4e65-ba88-a80a0e633532}.xml" t="Include" />
                 <e p="{41f8f366-c532-4670-8cfb-577a729d4a5a}.xml" t="Include" />
+                <e p="{46323608-3660-40c0-afc3-5732a39900c0}.xml" t="Include" />
                 <e p="{46b0ab6a-5477-420a-a372-8900d7bd9553}.xml" t="Include" />
+                <e p="{47507b11-8fd6-4349-8d2f-be3b659dced3}.xml" t="Include" />
+                <e p="{4f5fb0cd-7c21-4274-aadc-8fd576513dd4}.xml" t="Include" />
                 <e p="{59667245-edec-49cb-af2c-363115761de9}.xml" t="Include" />
+                <e p="{5c937ecc-2457-47cb-aab4-82bc85bfc841}.xml" t="Include" />
+                <e p="{5ebf46ca-a560-4374-9838-02cb974a72ed}.xml" t="Include" />
                 <e p="{610b6e49-a2a0-4111-a97f-29a297759707}.xml" t="Include" />
+                <e p="{623fa328-30bd-48de-8904-b27d2a404083}.xml" t="Include" />
+                <e p="{63a5f70c-e1b5-495b-8a57-78602b33fe5f}.xml" t="Include" />
                 <e p="{7273b02a-b13d-4b51-b55a-ca1effce3767}.xml" t="Include" />
                 <e p="{79465951-1748-429d-87d7-1cc86ff38d4b}.xml" t="Include" />
                 <e p="{7add33a3-57d3-415b-9619-c513bf1ff909}.xml" t="Include" />
+                <e p="{7de0c5a1-3e4e-4971-b6ff-1ad9058a720f}.xml" t="Include" />
+                <e p="{8108f630-d3f9-4fd4-aa14-d5df40de24cd}.xml" t="Include" />
+                <e p="{81f639fe-7432-4e1f-acbe-b023587e204b}.xml" t="Include" />
                 <e p="{88b27af6-0d00-4d7e-a21d-3beca1baf05f}.xml" t="Include" />
                 <e p="{8b895b52-87ce-4b85-b5b1-43bce6c50c1c}.xml" t="Include" />
+                <e p="{98cdbc59-3835-409f-899e-fd3df839c1fc}.xml" t="Include" />
                 <e p="{9df30ff1-c51d-448e-8ebc-029278c34910}.xml" t="Include" />
                 <e p="{a50c7638-c4e3-471d-886c-59454007a6bc}.xml" t="Include" />
                 <e p="{a93f88a3-0234-4a43-93c7-7e7f68c82bfd}.xml" t="Include" />
+                <e p="{abb58ffd-a3c2-42a9-851c-204acd0cf0ae}.xml" t="Include" />
+                <e p="{ac183b5e-8039-45e1-a9e2-d347e3dcfc5a}.xml" t="Include" />
+                <e p="{ac66016d-030c-4204-9adb-0414eefba9a8}.xml" t="Include" />
+                <e p="{b7c5e81d-9f3c-4ffb-9af9-1e2a658af0e2}.xml" t="Include" />
                 <e p="{bb101118-cf07-456a-bc78-a4769403ea60}.xml" t="Include" />
                 <e p="{bca55c5c-2a7c-43bd-98e8-5797a9f15d9e}.xml" t="Include" />
                 <e p="{bf0cf9dd-f35c-42a5-9e43-ed71bc23cdfd}.xml" t="Include" />
+                <e p="{c12a2d44-3242-4dde-a364-fbf99e385bac}.xml" t="Include" />
+                <e p="{c7286417-fdd3-41a8-9511-2f4470b3c22a}.xml" t="Include" />
+                <e p="{ca287b1e-0ce1-4555-a51c-b2ac4f3648c5}.xml" t="Include" />
                 <e p="{cc80b6f0-4ddd-443b-8573-e85e933b33fb}.xml" t="Include" />
+                <e p="{cd261aa2-cd14-4e10-82c8-79fdd41cc5b0}.xml" t="Include" />
                 <e p="{d249bc6d-5028-4b59-8669-088d40078c1f}.xml" t="Include" />
                 <e p="{d71305a9-c860-4d08-88ce-f89495e87383}.xml" t="Include" />
+                <e p="{da492e36-2b7d-48fe-82e7-6ca55f7bfc4e}.xml" t="Include" />
+                <e p="{de2d88fa-c896-4fbb-89e0-b7618eadb326}.xml" t="Include" />
                 <e p="{e8989562-7c79-4ea3-a4b1-fe7660bd5d02}.xml" t="Include" />
                 <e p="{eae4f452-102e-45c1-aa46-871b50d5ce07}.xml" t="Include" />
+                <e p="{eb536eb6-fe40-4422-ab1e-397ab2e1cbe8}.xml" t="Include" />
+                <e p="{ec1ced95-9e1a-480c-ba1c-fbbe26fa8d98}.xml" t="Include" />
                 <e p="{f45702f7-7782-4a48-a751-cb533a09c658}.xml" t="Include" />
+                <e p="{fb8ee273-bf51-41e1-b5e6-339cabc861e4}.xml" t="Include" />
                 <e p="{fd398326-f603-42c2-a751-da9c7578eed7}.xml" t="Include" />
               </e>
               <e p="Bank" t="Include">
@@ -94,18 +126,30 @@
                 <e p="{904ed8e5-3ed0-4b67-91f8-ac589a9bd25c}.xml" t="Include" />
               </e>
               <e p="Event" t="Include">
+                <e p="{033e7b2c-93cd-46dd-890c-2fee5c81cc46}.xml" t="Include" />
+                <e p="{47d2f1fc-1a1d-4abe-8e40-7394a16b68b8}.xml" t="Include" />
                 <e p="{490e4177-b5fe-4a72-85ee-efd44cdc7979}.xml" t="Include" />
+                <e p="{822e8902-ebe0-41d8-915e-890b23d2dac2}.xml" t="Include" />
+                <e p="{87f46f52-27c6-4589-82de-ed9ebb7a432b}.xml" t="Include" />
+                <e p="{a1527527-d175-414b-b20a-6cecdc2fa91b}.xml" t="Include" />
+                <e p="{b1dff473-c02a-47b3-a47b-8572f415d3f5}.xml" t="Include" />
                 <e p="{dc2edc08-40be-4987-b9cd-49cd63de84ee}.xml" t="Include" />
                 <e p="{f363f94f-5c21-4e3f-97ed-6a99eeb1e361}.xml" t="Include" />
                 <e p="{f406c121-08c8-47b6-a7f9-be5ba38ded96}.xml" t="Include" />
               </e>
               <e p="EventFolder" t="Include">
+                <e p="{2e909e0f-506e-4775-b5ae-24671018bf49}.xml" t="Include" />
+                <e p="{91d31d94-1048-449c-bd02-9e9194ffde7c}.xml" t="Include" />
                 <e p="{a1b6c649-fc30-4372-8244-eefcf3b26572}.xml" t="Include" />
+                <e p="{c1eca4c1-aad6-4f94-bf93-cb476b0ea111}.xml" t="Include" />
+                <e p="{ff101946-4c37-4b4c-9281-831ff6d89b94}.xml" t="Include" />
               </e>
               <e p="Master.xml" t="Include" />
               <e p="Mixer.xml" t="Include" />
               <e p="ParameterPreset" t="Include">
+                <e p="{42517ea6-1594-4ceb-9966-1de45dea9797}.xml" t="Include" />
                 <e p="{6177ffeb-018f-411a-ac6d-541cca7cb5e7}.xml" t="Include" />
+                <e p="{ab24759f-fcc1-4d53-8ebc-78d435acda5a}.xml" t="Include" />
                 <e p="{f482ad67-453b-4e88-b6fb-fffcb143a25f}.xml" t="Include" />
               </e>
               <e p="ParameterPresetFolder" t="Include">
@@ -128,8 +172,12 @@
         <e p="Francois" t="Include">
           <e p="Scripts" t="Include">
             <e p="ClientScripts" t="Include">
+              <e p="ClientGameManager.cs" t="Include" />
               <e p="ClientHUD.cs" t="Include" />
               <e p="CustomClientNetworkManager.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="Builder.cs" t="Include" />
             </e>
             <e p="PlayerInfos.cs" t="Include" />
             <e p="ServerScripts" t="Include">
@@ -947,6 +995,7 @@
         <e p="XuX's folder" t="Include">
           <e p="Scripts" t="Include">
             <e p="Arrow.cs" t="Include" />
+            <e p="PlayerAnimator.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="SpawnerPlayer.cs" t="Include" />
           </e>

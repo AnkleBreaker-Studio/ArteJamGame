@@ -8,7 +8,7 @@
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{a1b6c649-fc30-4372-8244-eefcf3b26572}</destination>
+			<destination>{2e909e0f-506e-4775-b5ae-24671018bf49}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{e5ae0d38-9238-44c0-ae68-213f28015027}</destination>
@@ -170,7 +170,7 @@
 			<value>19.5</value>
 		</property>
 		<property name="length">
-			<value>0.5</value>
+			<value>2.5</value>
 		</property>
 		<property name="playlistMode">
 			<value>1</value>
@@ -303,13 +303,13 @@
 	</object>
 	<object class="SustainPoint" id="{292579da-4077-4fc5-844c-4bccdd05df24}">
 		<property name="position">
-			<value>20</value>
+			<value>22</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{cff547af-0433-4e88-8032-88668d2c9e9a}</destination>
 		</relationship>
 		<relationship name="markerTrack">
-			<destination>{c3368590-40cb-4b9f-af4f-6d2a7b7586fb}</destination>
+			<destination>{2eea3c5d-e42c-4b72-b0e8-307682be529e}</destination>
 		</relationship>
 	</object>
 	<object class="TransitionRegion" id="{b1b7bda3-0671-4e99-a508-12963dac396a}">
@@ -402,10 +402,10 @@
 	<object class="MixerBusPanner" id="{1568526e-f152-4a44-99e7-b1b3d621f10e}" />
 	<object class="ParameterCondition" id="{d7ca77f2-021c-4044-8e58-3ea24c476382}">
 		<property name="minimum">
-			<value>2.0000002384185791</value>
+			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>2.9800000190734863</value>
+			<value>2</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{4ce52a5e-34e5-464e-9e54-5290f3a36cd9}</destination>
@@ -416,7 +416,7 @@
 			<value>1</value>
 		</property>
 		<property name="maximum">
-			<value>1.9799998998641968</value>
+			<value>1</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{4ce52a5e-34e5-464e-9e54-5290f3a36cd9}</destination>
@@ -427,7 +427,7 @@
 			<value>3</value>
 		</property>
 		<property name="maximum">
-			<value>4</value>
+			<value>3</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{4ce52a5e-34e5-464e-9e54-5290f3a36cd9}</destination>

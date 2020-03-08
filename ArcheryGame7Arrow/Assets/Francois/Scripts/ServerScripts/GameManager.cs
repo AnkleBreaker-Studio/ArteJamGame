@@ -15,6 +15,8 @@ public class TeamInfo
     }
 }
 
+
+
 public class GameManager : NetworkBehaviour
 {
     // Must be set before the build, will determine the number of
@@ -48,12 +50,15 @@ public class GameManager : NetworkBehaviour
     }
 
 
-    private void ServerHandlerRegister()
+    public void ServerHandlerRegister()
     {
-        NetworkServer.RegisterHandler<ClientReadyToStartMessage>(ClientReadyMessageRecieved);
-        NetworkServer.RegisterHandler<PlayerDeadMessage>(PlayerDeadMessageRecieved);
-        NetworkServer.RegisterHandler<ClientReadyToEndGameMessage>(ClientReadyToEndGameMessageReceived);
+        NetworkServer.RegisterHandler<ClientReadyToStartMessage>(ClientReadyMessageRecieved, false);
+        NetworkServer.RegisterHandler<PlayerDeadMessage>(PlayerDeadMessageRecieved, false);
+        NetworkServer.RegisterHandler<ClientReadyToEndGameMessage>(ClientReadyToEndGameMessageReceived, false);
+        NetworkServer.RegisterHandler<ClientOutOfArrowMessage>(ClientOutOfArrowMessageReceived, false);
     }
+
+    
 
     private void ClientReadyToEndGameMessageReceived(NetworkConnection arg1, ClientReadyToEndGameMessage arg2)
     {
@@ -67,9 +72,10 @@ public class GameManager : NetworkBehaviour
         ServerNetworkManager = GetComponent<CustomServerNetworkManager>();
         RedTeam = new TeamInfo();
         BlueTeam = new TeamInfo();
+        BlueTeam.Players = new List<PlayerInfos>();
+        RedTeam.Players = new List<PlayerInfos>();
         RedTeam.TeamColor = Color.red;
         BlueTeam.TeamColor = Color.blue;
-        ServerHandlerRegister();
     }
 
     private void FixedUpdate()
@@ -83,37 +89,40 @@ public class GameManager : NetworkBehaviour
 
     public void CheckIfLobbyIsFull()
     {
-        if (ServerNetworkManager.PlayerList.Count == ServerNetworkManager.maxConnections && !teamSetted)
+        if (ServerNetworkManager.connectedClients == ServerNetworkManager.maxConnections && !teamSetted)
         {
+           
+            print("GO START ASSIGN TEAM");
             int i = 0;
-            foreach (GameObject o in ServerNetworkManager.PlayerList)
+            foreach (PlayerData o in ServerNetworkManager.PlayerList)
             {
-                NetworkIdentity netID = o.GetComponent<NetworkIdentity>();
+                NetworkConnection netID = o.conn;
                 SetPlayerTeamMessage msg = new SetPlayerTeamMessage();
                 msg.Team = (i % 2 == 0) ? Team.blue : Team.red;
                 msg.TeamColor = (i % 2 == 0) ? Color.blue : Color.red;
-
                 if (msg.Team == Team.blue)
                     BlueTeam.Players.Add(new PlayerInfos()
                     {
-                        NetworkId = netID.netId,
+                        NetworkId = (uint) o.conn.connectionId,
                         Team = Team.blue,
                         IsReadyToStart = false
                     });
                 if (msg.Team == Team.red)
                     RedTeam.Players.Add(new PlayerInfos()
                     {
-                        NetworkId = netID.netId,
+                        NetworkId = (uint) o.conn.connectionId,
                         Team = Team.red,
                         IsReadyToStart = false
                     });
-                msg.NetworkIdentity = netID;
+                msg.NetworkConnection = netID;
                 NetworkServer.SendToAll(msg);
+                print("send1");
                 i++;
             }
 
             GameReadyToStartMessage readyMsg = new GameReadyToStartMessage();
             NetworkServer.SendToAll(readyMsg);
+            print("send2");
             teamSetted = true;
         }
     }
@@ -151,13 +160,16 @@ public class GameManager : NetworkBehaviour
 
     public void CheckIfDraw()
     {
-        PlayerInfos blueTeamPlayer = BlueTeam.Players.SingleOrDefault(x=>x.HasArrow == true);
-        PlayerInfos redTeamPlayer = RedTeam.Players.SingleOrDefault(x=>x.HasArrow == true);
-
-        if (blueTeamPlayer == null && redTeamPlayer == null)
+        if (gameStarted)
         {
-            DrawGameMessage msg = new DrawGameMessage();
-            NetworkServer.SendToAll(msg);
+            PlayerInfos blueTeamPlayer = BlueTeam.Players.SingleOrDefault(x => x.HasArrow == true);
+            PlayerInfos redTeamPlayer = RedTeam.Players.SingleOrDefault(x => x.HasArrow == true);
+
+            if (blueTeamPlayer == null && redTeamPlayer == null)
+            {
+                DrawGameMessage msg = new DrawGameMessage();
+                NetworkServer.SendToAll(msg);
+            }
         }
     }
 
@@ -180,11 +192,12 @@ public class GameManager : NetworkBehaviour
     }
     private void ClientReadyMessageRecieved(NetworkConnection arg1, ClientReadyToStartMessage arg2)
     {
-        foreach (GameObject o in ServerNetworkManager.PlayerList)
+        foreach (PlayerData o in ServerNetworkManager.PlayerList)
         {
             PlayerInfos a = GetPlayerTeam(arg1.identity);
             if (a != null)
             {
+                print("on spawn");
                 a.IsReadyToStart = true;
                 GameObject gameobject = Instantiate(ServerNetworkManager.playerPrefab);
                 NetworkServer.AddPlayerForConnection(arg1, gameobject);
@@ -196,11 +209,14 @@ public class GameManager : NetworkBehaviour
     {
         PlayerInfos playerInfo = GetPlayerTeam(obj.NetId);
         playerInfo.IsAlive = false;
+        playerInfo.HasArrow = false;
     }
 
 
     public bool IsTeamReady(TeamInfo team)
     {
+        if (team.Players.Count == 0)
+            return false;
         foreach (PlayerInfos playerInfos in team.Players)
         {
             if (playerInfos.IsReadyToStart == false)
@@ -215,5 +231,12 @@ public class GameManager : NetworkBehaviour
         if (a == null)
             a = RedTeam.Players.SingleOrDefault(x => x.NetworkId == NetId.netId);
         return a;
+    }
+    
+    private void ClientOutOfArrowMessageReceived(NetworkConnection arg1, ClientOutOfArrowMessage arg2)
+    {
+        print("test");
+        PlayerInfos pInfo = GetPlayerTeam(arg1.identity);
+        pInfo.HasArrow = false;
     }
 }
