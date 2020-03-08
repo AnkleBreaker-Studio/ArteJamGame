@@ -1031,7 +1031,6 @@
           <e p="Scripts" t="Include">
             <e p="AdjustTimeScale.cs" t="Include" />
             <e p="ProximityActivate.cs" t="Include" />
-            <e p="SimpleCameraController.cs" t="Include" />
             <e p="SimpleCharacterMotor.cs" t="Include" />
           </e>
         </e>
