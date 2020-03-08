@@ -44,13 +44,9 @@ public class CustomClientNetworkManager : NetworkManager
     }
 
     //Messages that need to be Registered on Server and Client Startup.
-    void RegisterServerHandles()
-    {
-        NetworkServer.RegisterHandler(MsgType.Highest + 1, OnReceivePassword);
-    }
 
     void RegisterClientHandles()
     {
-        NetworkClient.RegisterHandler(MsgType.Highest + 1, OnReceivePassword);
+        //NetworkClient.RegisterHandler<StringMessage>(OnReceivePassword);
     }
 }

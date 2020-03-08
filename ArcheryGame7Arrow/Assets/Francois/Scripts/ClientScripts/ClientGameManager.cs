@@ -7,7 +7,8 @@ using UnityEngine;
 
 public class ClientTeamInfo
 {
-    public NetworkIdentity NetId;
+    public NetworkConnection NetConn;
+    public bool ReadyToStart = false;
     public bool IsAlive = true;
     public bool HasArrow = true;
     public int NumberOfArrows;
@@ -65,7 +66,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void DisconnectMessageReceived(NetworkConnection arg1, DisconnectMessage arg2)
     {
-        playerList.Remove(playerList.SingleOrDefault(x => x.NetId == arg1.identity));
+        playerList.Remove(playerList.SingleOrDefault(x => x.NetConn == arg1));
     }
 
     public IEnumerator RedTeamWon()
@@ -144,7 +145,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void SetPlayerTeamMessageReceived(NetworkConnection arg1, SetPlayerTeamMessage arg2)
     {
-        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetId == arg1.identity);
+        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1);
         if (clientInfo != null)
         {
             clientInfo.Team = arg2.Team;
@@ -152,6 +153,14 @@ public class ClientGameManager : NetworkBehaviour
             clientInfo.NumberOfArrows = 7;
             clientInfo.IsAlive = true;
             clientInfo.HasArrow = true;
+            clientInfo.ReadyToStart = true;
+        }
+
+        if (playerList.SingleOrDefault(x => x.ReadyToStart == false) == null)
+        {
+            ClientReadyToStartMessage msg = new ClientReadyToStartMessage();
+            msg.NetId = netIdentity;
+            NetworkClient.Send(msg);
         }
     }
 
@@ -162,7 +171,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void PlayerGotKilledMessageReceived(NetworkConnection arg1, PlayerGotKilledMessage arg2)
     {
-        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetId == arg1.identity);
+        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1);
         if (clientInfo != null)
         {
             clientInfo.IsAlive = false;
@@ -172,10 +181,9 @@ public class ClientGameManager : NetworkBehaviour
 
     private void PlayerConnectedMessageReceived(NetworkConnection arg1, PlayerConnectedMessage arg2)
     {
-        print("je reçoi ma connection");
         playerList.Add(new ClientTeamInfo()
         {
-            NetId = arg1.identity,
+            NetConn = arg1,
             HasArrow = true,
             IsAlive = true,
             NumberOfArrows = 7

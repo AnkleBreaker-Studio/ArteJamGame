@@ -15,6 +15,8 @@ public class TeamInfo
     }
 }
 
+
+
 public class GameManager : NetworkBehaviour
 {
     // Must be set before the build, will determine the number of
@@ -70,6 +72,8 @@ public class GameManager : NetworkBehaviour
         ServerNetworkManager = GetComponent<CustomServerNetworkManager>();
         RedTeam = new TeamInfo();
         BlueTeam = new TeamInfo();
+        BlueTeam.Players = new List<PlayerInfos>();
+        RedTeam.Players = new List<PlayerInfos>();
         RedTeam.TeamColor = Color.red;
         BlueTeam.TeamColor = Color.blue;
     }
@@ -85,31 +89,32 @@ public class GameManager : NetworkBehaviour
 
     public void CheckIfLobbyIsFull()
     {
-        if (ServerNetworkManager.PlayerList.Count == ServerNetworkManager.maxConnections && !teamSetted)
+        if (ServerNetworkManager.connectedClients == ServerNetworkManager.maxConnections && !teamSetted)
         {
+           
+            print("GO START ASSIGN TEAM");
             int i = 0;
-            foreach (GameObject o in ServerNetworkManager.PlayerList)
+            foreach (PlayerData o in ServerNetworkManager.PlayerList)
             {
-                NetworkIdentity netID = o.GetComponent<NetworkIdentity>();
+                NetworkConnection netID = o.conn;
                 SetPlayerTeamMessage msg = new SetPlayerTeamMessage();
                 msg.Team = (i % 2 == 0) ? Team.blue : Team.red;
                 msg.TeamColor = (i % 2 == 0) ? Color.blue : Color.red;
-
                 if (msg.Team == Team.blue)
                     BlueTeam.Players.Add(new PlayerInfos()
                     {
-                        NetworkId = netID.netId,
+                        NetworkId = (uint) o.conn.connectionId,
                         Team = Team.blue,
                         IsReadyToStart = false
                     });
                 if (msg.Team == Team.red)
                     RedTeam.Players.Add(new PlayerInfos()
                     {
-                        NetworkId = netID.netId,
+                        NetworkId = (uint) o.conn.connectionId,
                         Team = Team.red,
                         IsReadyToStart = false
                     });
-                msg.NetworkIdentity = netID;
+                msg.NetworkConnection = netID;
                 NetworkServer.SendToAll(msg);
                 print("send1");
                 i++;
@@ -155,13 +160,16 @@ public class GameManager : NetworkBehaviour
 
     public void CheckIfDraw()
     {
-        PlayerInfos blueTeamPlayer = BlueTeam.Players.SingleOrDefault(x=>x.HasArrow == true);
-        PlayerInfos redTeamPlayer = RedTeam.Players.SingleOrDefault(x=>x.HasArrow == true);
-
-        if (blueTeamPlayer == null && redTeamPlayer == null)
+        if (gameStarted)
         {
-            DrawGameMessage msg = new DrawGameMessage();
-            NetworkServer.SendToAll(msg);
+            PlayerInfos blueTeamPlayer = BlueTeam.Players.SingleOrDefault(x => x.HasArrow == true);
+            PlayerInfos redTeamPlayer = RedTeam.Players.SingleOrDefault(x => x.HasArrow == true);
+
+            if (blueTeamPlayer == null && redTeamPlayer == null)
+            {
+                DrawGameMessage msg = new DrawGameMessage();
+                NetworkServer.SendToAll(msg);
+            }
         }
     }
 
@@ -184,11 +192,12 @@ public class GameManager : NetworkBehaviour
     }
     private void ClientReadyMessageRecieved(NetworkConnection arg1, ClientReadyToStartMessage arg2)
     {
-        foreach (GameObject o in ServerNetworkManager.PlayerList)
+        foreach (PlayerData o in ServerNetworkManager.PlayerList)
         {
             PlayerInfos a = GetPlayerTeam(arg1.identity);
             if (a != null)
             {
+                print("on spawn");
                 a.IsReadyToStart = true;
                 GameObject gameobject = Instantiate(ServerNetworkManager.playerPrefab);
                 NetworkServer.AddPlayerForConnection(arg1, gameobject);
@@ -206,6 +215,8 @@ public class GameManager : NetworkBehaviour
 
     public bool IsTeamReady(TeamInfo team)
     {
+        if (team.Players.Count == 0)
+            return false;
         foreach (PlayerInfos playerInfos in team.Players)
         {
             if (playerInfos.IsReadyToStart == false)
