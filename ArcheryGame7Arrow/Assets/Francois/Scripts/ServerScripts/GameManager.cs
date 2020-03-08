@@ -200,6 +200,7 @@ public class GameManager : NetworkBehaviour
     }
     private void ClientReadyMessageRecieved(NetworkConnection arg1, ClientReadyToStartMessage arg2)
     {
+        print("je fait un check " + arg1.connectionId);
         foreach (PlayerData o in ServerNetworkManager.PlayerList)
         {
             PlayerInfos a = GetPlayerTeam(arg1.connectionId);

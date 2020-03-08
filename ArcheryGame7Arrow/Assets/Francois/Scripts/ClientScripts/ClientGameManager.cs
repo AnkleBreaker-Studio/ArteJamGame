@@ -176,8 +176,10 @@ public class ClientGameManager : NetworkBehaviour
             clientInfo.ReadyToStart = true;
         }
 
+        print(playerList.SingleOrDefault(x => x.ReadyToStart == false) == null);
         if (playerList.SingleOrDefault(x => x.ReadyToStart == false) == null)
         {
+            print("envoie client ready to start");
             ClientReadyToStartMessage msg = new ClientReadyToStartMessage();
             NetworkClient.Send(msg);
         }
