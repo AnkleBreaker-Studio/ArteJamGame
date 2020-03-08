@@ -11,9 +11,10 @@ public enum Team
 public class PlayerInfos {
 
     public uint NetworkId;
-    public bool IsReadyToStart;
-    public bool IsAlive;
-    public bool HasArrow;
+    public bool IsReadyToStart = false;
+    public bool IsAlive = true;
+    public bool HasArrow = true;
+    public bool ReadyToStop = false;
     public Team Team;
 
 }

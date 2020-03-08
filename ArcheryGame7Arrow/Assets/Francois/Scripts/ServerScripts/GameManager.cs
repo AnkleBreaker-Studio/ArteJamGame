@@ -19,7 +19,6 @@ public class GameManager : NetworkBehaviour
 {
     // Must be set before the build, will determine the number of
     // player in each team
-    [SerializeField] uint mWinScore;
     public CustomServerNetworkManager ServerNetworkManager;
 
     public TeamInfo RedTeam;
@@ -27,7 +26,8 @@ public class GameManager : NetworkBehaviour
 
     private bool teamSetted = false;
     private bool gameStarted = false;
-
+    private bool gameEnded = false;
+    
     private static GameManager instance = null;
 
     public static GameManager Instance
@@ -52,8 +52,16 @@ public class GameManager : NetworkBehaviour
     {
         NetworkServer.RegisterHandler<ClientReadyToStartMessage>(ClientReadyMessageRecieved);
         NetworkServer.RegisterHandler<PlayerDeadMessage>(PlayerDeadMessageRecieved);
+        NetworkServer.RegisterHandler<ClientReadyToEndGameMessage>(ClientReadyToEndGameMessageReceived);
     }
-    
+
+    private void ClientReadyToEndGameMessageReceived(NetworkConnection arg1, ClientReadyToEndGameMessage arg2)
+    {
+        PlayerInfos a = GetPlayerTeam(arg1.identity);
+        if (a != null)
+            a.ReadyToStop = true;
+    }
+
     void Start()
     {
         ServerNetworkManager = GetComponent<CustomServerNetworkManager>();
@@ -66,6 +74,15 @@ public class GameManager : NetworkBehaviour
 
     private void FixedUpdate()
     {
+        CheckIfLobbyIsFull();
+        CheckForGameToStart();
+        CheckIfTeamWin();
+        CheckIfDraw();
+        CanDisconnectAllClient();
+    }
+
+    public void CheckIfLobbyIsFull()
+    {
         if (ServerNetworkManager.PlayerList.Count == ServerNetworkManager.maxConnections && !teamSetted)
         {
             int i = 0;
@@ -74,13 +91,13 @@ public class GameManager : NetworkBehaviour
                 NetworkIdentity netID = o.GetComponent<NetworkIdentity>();
                 SetPlayerTeamMessage msg = new SetPlayerTeamMessage();
                 msg.Team = (i % 2 == 0) ? Team.blue : Team.red;
-                msg.TeamColor = Color.blue;
+                msg.TeamColor = (i % 2 == 0) ? Color.blue : Color.red;
 
                 if (msg.Team == Team.blue)
                     BlueTeam.Players.Add(new PlayerInfos()
                     {
                         NetworkId = netID.netId,
-                        Team = (msg.Team == Team.blue) ? Team.blue : Team.red,
+                        Team = Team.blue,
                         IsReadyToStart = false
                     });
                 if (msg.Team == Team.red)
@@ -97,26 +114,70 @@ public class GameManager : NetworkBehaviour
 
             GameReadyToStartMessage readyMsg = new GameReadyToStartMessage();
             NetworkServer.SendToAll(readyMsg);
-            foreach (PlayerInfos playerInfo in BlueTeam.Players)
-            {
-                Debug.Log("est un bleu : "  + playerInfo.NetworkId);
-            }
-            foreach (PlayerInfos playerInfo in RedTeam.Players)
-            {
-                Debug.Log("est un rouge " + playerInfo.NetworkId);
-            }
             teamSetted = true;
         }
-
+    }
+    
+    public void CheckForGameToStart()
+    {
         if (IsTeamReady(BlueTeam) && IsTeamReady(RedTeam) && !gameStarted)
         {
             gameStarted = true;
             GameStartMessage msg = new GameStartMessage();
             NetworkServer.SendToAll(msg);
         }
+    }
+    
+    public void CheckIfTeamWin()
+    {
+        if (gameStarted && !gameEnded)
+        {
+            PlayerInfos blueteam = BlueTeam.Players.SingleOrDefault(x => x.IsAlive == true);
+            PlayerInfos redteam = RedTeam.Players.SingleOrDefault(x => x.IsAlive == true);
+            if (blueteam == null)
+            {
+                RedTeamWonMessage msg = new RedTeamWonMessage();
+                NetworkServer.SendToAll(msg);
+            }
 
+            if (redteam == null)
+            {
+                BlueTeamWonMessage msg = new BlueTeamWonMessage();
+                NetworkServer.SendToAll(msg);
+            }
+            gameEnded = true;
+        }
     }
 
+    public void CheckIfDraw()
+    {
+        PlayerInfos blueTeamPlayer = BlueTeam.Players.SingleOrDefault(x=>x.HasArrow == true);
+        PlayerInfos redTeamPlayer = RedTeam.Players.SingleOrDefault(x=>x.HasArrow == true);
+
+        if (blueTeamPlayer == null && redTeamPlayer == null)
+        {
+            DrawGameMessage msg = new DrawGameMessage();
+            NetworkServer.SendToAll(msg);
+        }
+    }
+
+    public void CanDisconnectAllClient()
+    {
+        if (gameEnded == true)
+        {
+            PlayerInfos blueteam = BlueTeam.Players.SingleOrDefault(x => x.ReadyToStop == false);
+            PlayerInfos redteam = RedTeam.Players.SingleOrDefault(x => x.ReadyToStop == false);
+            if (blueteam == null && redteam == null)
+            {
+                NetworkServer.DisconnectAllConnections();
+                RedTeam.Players.Clear();
+                BlueTeam.Players.Clear();
+                teamSetted = false;
+                gameStarted = false;
+                gameEnded = false;
+            }
+        }
+    }
     private void ClientReadyMessageRecieved(NetworkConnection arg1, ClientReadyToStartMessage arg2)
     {
         foreach (GameObject o in ServerNetworkManager.PlayerList)
@@ -125,6 +186,8 @@ public class GameManager : NetworkBehaviour
             if (a != null)
             {
                 a.IsReadyToStart = true;
+                GameObject gameobject = Instantiate(ServerNetworkManager.playerPrefab);
+                NetworkServer.AddPlayerForConnection(arg1, gameobject);
             }
         }
     }
