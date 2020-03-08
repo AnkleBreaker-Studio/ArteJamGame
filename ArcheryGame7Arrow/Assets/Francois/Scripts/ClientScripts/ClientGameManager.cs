@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ClientTeamInfo
 {
-    public NetworkConnection NetConn;
+    public int NetId;
     public bool ReadyToStart = false;
     public bool IsAlive = true;
     public bool HasArrow = true;
@@ -66,7 +66,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void DisconnectMessageReceived(NetworkConnection arg1, DisconnectMessage arg2)
     {
-        playerList.Remove(playerList.SingleOrDefault(x => x.NetConn == arg1));
+        playerList.Remove(playerList.SingleOrDefault(x => x.NetId == arg1.connectionId));
     }
 
     public IEnumerator RedTeamWon()
@@ -145,7 +145,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void SetPlayerTeamMessageReceived(NetworkConnection arg1, SetPlayerTeamMessage arg2)
     {
-        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1);
+        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetId == arg1.connectionId);
         if (clientInfo != null)
         {
             clientInfo.Team = arg2.Team;
@@ -171,7 +171,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void PlayerGotKilledMessageReceived(NetworkConnection arg1, PlayerGotKilledMessage arg2)
     {
-        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1);
+        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetId == arg1.connectionId);
         if (clientInfo != null)
         {
             clientInfo.IsAlive = false;
@@ -183,7 +183,7 @@ public class ClientGameManager : NetworkBehaviour
     {
         playerList.Add(new ClientTeamInfo()
         {
-            NetConn = arg1,
+            NetId = arg1.connectionId,
             HasArrow = true,
             IsAlive = true,
             NumberOfArrows = 7
