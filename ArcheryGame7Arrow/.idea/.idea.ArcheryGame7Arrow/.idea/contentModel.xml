@@ -52,6 +52,7 @@
           </e>
         </e>
         <e p="DontDestroyOnLoadingScene.cs" t="Include" />
+        <e p="DontDestroyOnLoadSpe.cs" t="Include" />
         <e p="FastIK" t="Include">
           <e p="Documentation.txt" t="Include" />
           <e p="Scripts" t="Include">
