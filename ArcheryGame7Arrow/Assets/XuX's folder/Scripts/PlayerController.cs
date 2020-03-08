@@ -6,13 +6,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private float jumpForce;
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private Animator animatorToLink;
 
     private Camera cam;
-    private NetworkTransform cubeTransform;
+    private NetworkTransform playerTransform;
+    private NetworkAnimator animator;
     private float _horizontalInput;
     private Vector3 mousePos;
     private Rigidbody rb;
@@ -20,9 +20,12 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        cubeTransform = GetComponent<NetworkTransform>();
+        playerTransform = GetComponent<NetworkTransform>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<NetworkAnimator>();
+        animator.animator = animatorToLink;
+
     }
 
     void Update()
@@ -38,7 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
-        //Vector2 lookDir = mousePos - cubeTransform.transform.position; // aim Vector
+        //Vector2 lookDir = mousePos - playerTransform.transform.position; // aim Vector
         //Debug.Log(lookDir);
     }
 
@@ -46,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         _horizontalInput = Input.GetAxis("Horizontal");
-        cubeTransform.transform.Translate(new Vector3(_horizontalInput, 0, 0) * speed, Space.World);
+        playerTransform.transform.Translate(new Vector3(_horizontalInput, 0, 0) * speed, Space.World);
     }
 
     private void Jump()
