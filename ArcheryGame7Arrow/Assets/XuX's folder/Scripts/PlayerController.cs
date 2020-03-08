@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Camera cam;
     private NetworkTransform playerTransform;
-    private NetworkAnimator animator;
+    private Animator animator;
     private float _horizontalInput;
     private Vector3 mousePos;
     private Rigidbody rb;
@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
         playerTransform = GetComponent<NetworkTransform>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody>();
-        animator = GetComponent<NetworkAnimator>();
-        animator.animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        GetComponent<NetworkAnimator>().animator = animator;
     }
 
     void Update()
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
-        //Vector2 lookDir = mousePos - playerTransform.transform.position; // aim Vector
+        Vector2 lookDir = mousePos - playerTransform.transform.position; // aim Vector
         //Debug.Log(lookDir);
     }
 
@@ -48,11 +48,13 @@ public class PlayerController : MonoBehaviour
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         playerTransform.transform.Translate(new Vector3(_horizontalInput, 0, 0) * speed, Space.World);
+
     }
 
     private void Jump()
     {
         rb.velocity = Vector2.up * jumpForce;
+        animator.SetBool("isJumping", true);
         Debug.Log("jump!");
     }
 }

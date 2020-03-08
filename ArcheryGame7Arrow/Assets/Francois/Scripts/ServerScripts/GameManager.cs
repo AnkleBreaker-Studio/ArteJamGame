@@ -5,6 +5,7 @@ using System.Linq;
 using Mirror;
 using UnityEngine;
 
+[Serializable]
 public class TeamInfo
 {
     public List<PlayerInfos> Players;
@@ -53,12 +54,18 @@ public class GameManager : NetworkBehaviour
     public void ServerHandlerRegister()
     {
         NetworkServer.RegisterHandler<ClientReadyToStartMessage>(ClientReadyMessageRecieved, false);
+        NetworkServer.RegisterHandler<ClientSpawnPlayerMessage>(ClientSpawnPlayerMessageRecieved, false);
         NetworkServer.RegisterHandler<PlayerDeadMessage>(PlayerDeadMessageRecieved, false);
         NetworkServer.RegisterHandler<ClientReadyToEndGameMessage>(ClientReadyToEndGameMessageReceived, false);
         NetworkServer.RegisterHandler<ClientOutOfArrowMessage>(ClientOutOfArrowMessageReceived, false);
     }
 
-    
+    private void ClientSpawnPlayerMessageRecieved(NetworkConnection arg1, ClientSpawnPlayerMessage arg2)
+    {
+        GameObject gameobject = Instantiate(ServerNetworkManager.playerPrefab);
+        NetworkServer.AddPlayerForConnection(arg1, gameobject);
+    }
+
 
     private void ClientReadyToEndGameMessageReceived(NetworkConnection arg1, ClientReadyToEndGameMessage arg2)
     {
@@ -116,13 +123,11 @@ public class GameManager : NetworkBehaviour
                     });
                 msg.NetId = netID.connectionId;
                 NetworkServer.SendToAll(msg);
-                print("send1");
                 i++;
             }
 
             GameReadyToStartMessage readyMsg = new GameReadyToStartMessage();
             NetworkServer.SendToAll(readyMsg);
-            print("send2");
             teamSetted = true;
         }
     }
@@ -141,15 +146,15 @@ public class GameManager : NetworkBehaviour
     {
         if (gameStarted && !gameEnded)
         {
-            PlayerInfos blueteam = BlueTeam.Players.SingleOrDefault(x => x.IsAlive == true);
-            PlayerInfos redteam = RedTeam.Players.SingleOrDefault(x => x.IsAlive == true);
-            if (blueteam == null)
+            int blueteam = BlueTeam.Players.Count(x => x.IsAlive);
+            int redteam = RedTeam.Players.Count(x => x.IsAlive);
+            if (blueteam == 0)
             {
                 RedTeamWonMessage msg = new RedTeamWonMessage();
                 NetworkServer.SendToAll(msg);
             }
 
-            if (redteam == null)
+            if (redteam == 0)
             {
                 BlueTeamWonMessage msg = new BlueTeamWonMessage();
                 NetworkServer.SendToAll(msg);
@@ -162,10 +167,10 @@ public class GameManager : NetworkBehaviour
     {
         if (gameStarted)
         {
-            PlayerInfos blueTeamPlayer = BlueTeam.Players.SingleOrDefault(x => x.HasArrow == true);
-            PlayerInfos redTeamPlayer = RedTeam.Players.SingleOrDefault(x => x.HasArrow == true);
+            int blueTeamPlayer = BlueTeam.Players.Count(x => x.HasArrow);
+            int redTeamPlayer = RedTeam.Players.Count(x => x.HasArrow);
 
-            if (blueTeamPlayer == null && redTeamPlayer == null)
+            if (blueTeamPlayer == 0 && redTeamPlayer == 0)
             {
                 DrawGameMessage msg = new DrawGameMessage();
                 NetworkServer.SendToAll(msg);
@@ -177,9 +182,9 @@ public class GameManager : NetworkBehaviour
     {
         if (gameEnded == true)
         {
-            PlayerInfos blueteam = BlueTeam.Players.SingleOrDefault(x => x.ReadyToStop == false);
-            PlayerInfos redteam = RedTeam.Players.SingleOrDefault(x => x.ReadyToStop == false);
-            if (blueteam == null && redteam == null)
+            int blueteam = BlueTeam.Players.Count(x => x.ReadyToStop == false);
+            int redteam = RedTeam.Players.Count(x => x.ReadyToStop == false);
+            if (blueteam == 0 && redteam == 0)
             {
                 NetworkServer.DisconnectAllConnections();
                 RedTeam.Players.Clear();
@@ -192,15 +197,13 @@ public class GameManager : NetworkBehaviour
     }
     private void ClientReadyMessageRecieved(NetworkConnection arg1, ClientReadyToStartMessage arg2)
     {
+        print("je fait un check " + arg1.connectionId);
         foreach (PlayerData o in ServerNetworkManager.PlayerList)
         {
             PlayerInfos a = GetPlayerTeam(arg1.connectionId);
             if (a != null)
             {
-                print("on spawn");
                 a.IsReadyToStart = true;
-                GameObject gameobject = Instantiate(ServerNetworkManager.playerPrefab);
-                NetworkServer.AddPlayerForConnection(arg1, gameobject);
             }
         }
     }

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ClientTeamInfo
 {
-    public NetworkConnection NetConn;
+    public int NetConn;
     public bool ReadyToStart = false;
     public bool IsAlive = true;
     public bool HasArrow = true;
@@ -21,6 +21,8 @@ public class ClientGameManager : NetworkBehaviour
 {
     public List<ClientTeamInfo> playerList = new List<ClientTeamInfo>();
 
+    private CustomClientNetworkManager _networkManager;
+    
     #region Singleton
     private static ClientGameManager instance = null;
     public static ClientGameManager Instance
@@ -43,6 +45,7 @@ public class ClientGameManager : NetworkBehaviour
     
     private void Start()
     {
+        _networkManager = GetComponent<CustomClientNetworkManager>();
     }
 
     private void OnConnectedToServer()
@@ -66,7 +69,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void DisconnectMessageReceived(NetworkConnection arg1, DisconnectMessage arg2)
     {
-        playerList.Remove(playerList.SingleOrDefault(x => x.NetConn == arg1));
+        playerList.Remove(playerList.SingleOrDefault(x => x.NetConn == arg1.connectionId));
     }
 
     public IEnumerator RedTeamWon()
@@ -86,9 +89,27 @@ public class ClientGameManager : NetworkBehaviour
     
     public IEnumerator StartGame()
     {
+        _networkManager.GameStartingUiLabel.text = "7";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "6";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "5";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "4";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "3";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "2";
+        yield return new WaitForSeconds(1);
+        _networkManager.GameStartingUiLabel.text = "1";
         yield return null;
-        ClientReadyToStartMessage msg = new ClientReadyToStartMessage();
+        ClientSpawnPlayerMessage msg = new ClientSpawnPlayerMessage();
         NetworkClient.Send(msg);
+        if (playerList.SingleOrDefault(x => x.ReadyToStart == false) == null)
+        {
+            ClientReadyToStartMessage msg2 = new ClientReadyToStartMessage();
+            NetworkClient.Send(msg2);
+        }
     }
     
     private void DrawGameMessageReceived(NetworkConnection arg1, DrawGameMessage arg2)
@@ -127,6 +148,8 @@ public class ClientGameManager : NetworkBehaviour
     
     private void GameReadyToStartMessageReceived(NetworkConnection arg1, GameReadyToStartMessage arg2)
     {
+        _networkManager.WaitingForPlayerUI.SetActive(false);
+        _networkManager.GameStartingUI.SetActive(true);
         print("GameReadyToStart");
         if (NetworkClient.connection == arg1)
             StartCoroutine(StartGame());
@@ -139,13 +162,14 @@ public class ClientGameManager : NetworkBehaviour
 
     private void GameStartMessageReceived(NetworkConnection arg1, GameStartMessage arg2)
     {
+        _networkManager.GameStartingUI.SetActive(false);
         print("startGame");
         /*Starting the round*/
     }
 
     private void SetPlayerTeamMessageReceived(NetworkConnection arg1, SetPlayerTeamMessage arg2)
     {
-        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1);
+        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg2.NetId);
         if (clientInfo != null)
         {
             clientInfo.Team = arg2.Team;
@@ -154,13 +178,6 @@ public class ClientGameManager : NetworkBehaviour
             clientInfo.IsAlive = true;
             clientInfo.HasArrow = true;
             clientInfo.ReadyToStart = true;
-        }
-
-        if (playerList.SingleOrDefault(x => x.ReadyToStart == false) == null)
-        {
-            ClientReadyToStartMessage msg = new ClientReadyToStartMessage();
-            msg.NetId = netIdentity;
-            NetworkClient.Send(msg);
         }
     }
 
@@ -171,7 +188,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void PlayerGotKilledMessageReceived(NetworkConnection arg1, PlayerGotKilledMessage arg2)
     {
-        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1);
+        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg2.PlayerId);
         if (clientInfo != null)
         {
             clientInfo.IsAlive = false;
@@ -183,7 +200,7 @@ public class ClientGameManager : NetworkBehaviour
     {
         playerList.Add(new ClientTeamInfo()
         {
-            NetConn = arg1,
+            NetConn = arg2.ConnectionId,
             HasArrow = true,
             IsAlive = true,
             NumberOfArrows = 7
