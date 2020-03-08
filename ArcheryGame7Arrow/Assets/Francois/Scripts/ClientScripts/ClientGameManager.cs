@@ -16,7 +16,7 @@ public class ClientTeamInfo
 }
 
 
-public class ClientGameManager : MonoBehaviour
+public class ClientGameManager : NetworkBehaviour
 {
     public List<ClientTeamInfo> playerList = new List<ClientTeamInfo>();
 
@@ -172,6 +172,7 @@ public class ClientGameManager : MonoBehaviour
 
     private void PlayerConnectedMessageReceived(NetworkConnection arg1, PlayerConnectedMessage arg2)
     {
+        print("je reçoi ma connection");
         playerList.Add(new ClientTeamInfo()
         {
             NetId = arg1.identity,
@@ -180,6 +181,4 @@ public class ClientGameManager : MonoBehaviour
             NumberOfArrows = 7
         });
     }
-    
-
 }
