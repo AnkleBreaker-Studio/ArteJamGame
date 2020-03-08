@@ -59,7 +59,6 @@ public class GameManager : NetworkBehaviour
         ServerNetworkManager = GetComponent<CustomServerNetworkManager>();
         RedTeam = new TeamInfo();
         BlueTeam = new TeamInfo();
-
         RedTeam.TeamColor = Color.red;
         BlueTeam.TeamColor = Color.blue;
         ServerHandlerRegister();
@@ -69,7 +68,6 @@ public class GameManager : NetworkBehaviour
     {
         if (ServerNetworkManager.PlayerList.Count == ServerNetworkManager.maxConnections && !teamSetted)
         {
-            print("SETTING ALL THE TEAMS");
             int i = 0;
             foreach (GameObject o in ServerNetworkManager.PlayerList)
             {
@@ -101,11 +99,11 @@ public class GameManager : NetworkBehaviour
             NetworkServer.SendToAll(readyMsg);
             foreach (PlayerInfos playerInfo in BlueTeam.Players)
             {
-                Debug.Log(playerInfo.NetworkId);
+                Debug.Log("est un bleu : "  + playerInfo.NetworkId);
             }
             foreach (PlayerInfos playerInfo in RedTeam.Players)
             {
-                Debug.Log(playerInfo.NetworkId);
+                Debug.Log("est un rouge " + playerInfo.NetworkId);
             }
             teamSetted = true;
         }
