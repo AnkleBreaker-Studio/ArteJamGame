@@ -114,7 +114,7 @@ public class GameManager : NetworkBehaviour
                         Team = Team.red,
                         IsReadyToStart = false
                     });
-                msg.NetworkConnection = netID.identity;
+                msg.NetId = netID.connectionId;
                 NetworkServer.SendToAll(msg);
                 print("send1");
                 i++;
