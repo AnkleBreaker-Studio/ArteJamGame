@@ -12,11 +12,17 @@
 		</relationship>
 	</object>
 	<object class="GameParameter" id="{4ce52a5e-34e5-464e-9e54-5290f3a36cd9}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
 		<property name="maximum">
 			<value>4</value>
 		</property>
-		<property name="isGlobal">
-			<value>true</value>
+		<property name="enumerationLabels">
+			<value>Arrow on the air</value>
+			<value>Arrow Hit The Player</value>
+			<value>Arrow hit the ground</value>
+			<value>Arrow hit the prop</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
