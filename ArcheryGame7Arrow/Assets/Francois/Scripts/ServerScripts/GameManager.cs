@@ -112,11 +112,13 @@ public class GameManager : NetworkBehaviour
                     });
                 msg.NetworkIdentity = netID;
                 NetworkServer.SendToAll(msg);
+                print("send1");
                 i++;
             }
 
             GameReadyToStartMessage readyMsg = new GameReadyToStartMessage();
             NetworkServer.SendToAll(readyMsg);
+            print("send2");
             teamSetted = true;
         }
     }
@@ -199,6 +201,7 @@ public class GameManager : NetworkBehaviour
     {
         PlayerInfos playerInfo = GetPlayerTeam(obj.NetId);
         playerInfo.IsAlive = false;
+        playerInfo.HasArrow = false;
     }
 
 
@@ -222,6 +225,7 @@ public class GameManager : NetworkBehaviour
     
     private void ClientOutOfArrowMessageReceived(NetworkConnection arg1, ClientOutOfArrowMessage arg2)
     {
+        print("test");
         PlayerInfos pInfo = GetPlayerTeam(arg1.identity);
         pInfo.HasArrow = false;
     }

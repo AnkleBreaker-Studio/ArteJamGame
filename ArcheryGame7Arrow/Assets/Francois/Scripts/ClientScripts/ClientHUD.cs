@@ -84,10 +84,14 @@ public class ClientHUD : MonoBehaviour
     public void ConnectSuccses()
     {
         connected = true;
-        connecting.SetActive(false);
-        disConnect.SetActive(true);
-        connectToServer.SetActive(false);
-        addressPanel.SetActive(false);
+        if (connecting != null)
+            connecting.SetActive(false);
+        if (disConnect != null)
+         disConnect.SetActive(true);
+        if (connectToServer != null)
+          connectToServer.SetActive(false);
+        if (addressPanel != null)
+          addressPanel.SetActive(false);
         //menuCam.SetActive(false);   //if your player has a camera on him this one should be turned off when entering the game/lobby.
     }
 
@@ -100,9 +104,12 @@ public class ClientHUD : MonoBehaviour
     {
         if (showMessage)
             disConnectMessage.SetActive(true);
-        connectToServer.SetActive(true);
-        disConnect.SetActive(false);
-        addressPanel.SetActive(true);
+        if (connectToServer != null)
+            connectToServer.SetActive(true);
+        if (disConnect != null)
+            disConnect.SetActive(false);
+        if (addressPanel != null)
+            addressPanel.SetActive(true);
         //menuCam.SetActive(true);  //turn the camera on again when returning to menu scene.
         manager.StopClient();
     }
