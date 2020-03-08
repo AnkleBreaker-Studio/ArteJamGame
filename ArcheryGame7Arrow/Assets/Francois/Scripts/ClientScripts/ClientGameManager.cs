@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ClientTeamInfo
 {
-    public NetworkConnection NetConn;
+    public int NetConn;
     public bool ReadyToStart = false;
     public bool IsAlive = true;
     public bool HasArrow = true;
@@ -192,7 +192,7 @@ public class ClientGameManager : NetworkBehaviour
 
     private void PlayerGotKilledMessageReceived(NetworkConnection arg1, PlayerGotKilledMessage arg2)
     {
-        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1);
+        ClientTeamInfo clientInfo = playerList.SingleOrDefault(x => x.NetConn == arg1.connectionId);
         if (clientInfo != null)
         {
             clientInfo.IsAlive = false;
@@ -204,7 +204,7 @@ public class ClientGameManager : NetworkBehaviour
     {
         playerList.Add(new ClientTeamInfo()
         {
-            NetConn = arg1,
+            NetConn = arg2.ConnectionId,
             HasArrow = true,
             IsAlive = true,
             NumberOfArrows = 7

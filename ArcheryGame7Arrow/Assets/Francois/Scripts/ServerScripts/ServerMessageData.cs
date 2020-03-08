@@ -11,7 +11,7 @@ public class PlayerConnectedMessage : MessageBase
 
 public class PlayerGotKilledMessage : MessageBase
 {
-    
+    public int PlayerId;
 }
 
 
