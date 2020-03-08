@@ -178,7 +178,6 @@ public class ClientGameManager : NetworkBehaviour
         if (playerList.SingleOrDefault(x => x.ReadyToStart == false) == null)
         {
             ClientReadyToStartMessage msg = new ClientReadyToStartMessage();
-            msg.NetId = netIdentity;
             NetworkClient.Send(msg);
         }
     }
