@@ -92,11 +92,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4538260452561164803}
   - component: {fileID: 2596701995835758127}
+  - component: {fileID: -2484742201937952215}
   - component: {fileID: 6807825495292762882}
   - component: {fileID: 7665390972052455739}
-  - component: {fileID: 6657983276321961633}
   - component: {fileID: -1479028434327803472}
-  - component: {fileID: 5463403417783649296}
+  - component: {fileID: 1755544065464453144}
+  - component: {fileID: 5476812344116367247}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -111,7 +112,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842832643172009653}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -159,7 +160,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 4295a3527d598e143814478a21851049, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
     are already bound by a Humanoid avatar. These transforms can only be changed
@@ -167,6 +168,22 @@ Animator:
   m_HasTransformHierarchy: 0
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2484742201937952215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842832643172009653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  clientAuthority: 0
+  animator: {fileID: 2596701995835758127}
 --- !u!114 &6807825495292762882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,24 +218,6 @@ MonoBehaviour:
   localRotationSensitivity: 0.01
   localScaleSensitivity: 0.01
   compressRotation: 1
---- !u!143 &6657983276321961633
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842832643172009653}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1479028434327803472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,32 +232,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  characterController: {fileID: -3559713361004148832, guid: b45bda890e15fb941a960058d2fd5b15,
-    type: 3}
   moveSpeed: 2
-  turnSensitivity: 5
-  maxTurnSpeed: 150
+  jumpForce: 1
+  gravity: 2
   horizontal: 0
   vertical: 0
-  turn: 0
   jumpSpeed: 0
-  isGrounded: 1
-  isFalling: 0
-  velocity: {x: 0, y: 0, z: 0}
---- !u!114 &5463403417783649296
-MonoBehaviour:
+  isGrounded: 0
+  isJumping: 0
+  isDead: 0
+  isShooting: 0
+--- !u!65 &1755544065464453144
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842832643172009653}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e771487055dfd447a5ee428899ffb29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  jumpForce: 5
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8117957, y: 11.233414, z: 1}
+  m_Center: {x: -0.08886337, y: 5.116707, z: 0}
+--- !u!54 &5476812344116367247
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842832643172009653}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1169020913476572755
 GameObject:
   m_ObjectHideFlags: 0
