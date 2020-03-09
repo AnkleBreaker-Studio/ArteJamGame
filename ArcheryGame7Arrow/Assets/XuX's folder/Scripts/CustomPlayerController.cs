@@ -8,8 +8,6 @@ public class CustomPlayerController : NetworkBehaviour
     public float moveSpeed = 8f;
     public float jumpForce;
     public float gravity;
-    //public float turnSensitivity = 5f;
-    //public float maxTurnSpeed = 150f;
 
     [Header("Debug")]
     [SerializeField] float horizontal = 0f;
@@ -23,8 +21,6 @@ public class CustomPlayerController : NetworkBehaviour
     private BoxCollider collider;
 
     private Animator animator;
-    //public float turn = 0f;
-    //public CharacterController characterController;
 
     void Awake()
     {
@@ -42,29 +38,39 @@ public class CustomPlayerController : NetworkBehaviour
         Camera.main.transform.localEulerAngles = new Vector3(0, -90f, 0f);
     }
 
+    void OnCollisionEnter(Collision other)
+    {
+        isGrounded = true;
+        Debug.Log("collider enter");
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        isGrounded = false;
+        Debug.Log("collider exit");
+    }
+
     void Update()
     {
         if (!isLocalPlayer)
             return;
 
-        if (isDead)
-            return;
-
         horizontal = Input.GetAxis("Horizontal");
-        // For Debug/ test animations
+        // For testing animations
         if (Input.GetMouseButtonDown(0))
             isShooting = true;
+        if (Input.GetMouseButtonUp(0))
+            isShooting = false;
         if (Input.GetKey(KeyCode.E))
-            isDead = true;
+            animator.Play("dead");
+        //isDead = true;
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-        {
-            jumpSpeed = jumpForce;
-            isJumping = true;
-        }
+            Jump();
 
         jumpSpeed -= Time.deltaTime;
         vertical = Mathf.Lerp(0, jumpForce, jumpSpeed);
+
         if (jumpSpeed < 0)
             isJumping = false;
 
@@ -73,6 +79,7 @@ public class CustomPlayerController : NetworkBehaviour
         {
             horizontal /= 3;
         }
+
         UpdateAnimatorVar();
     }
 
@@ -86,24 +93,20 @@ public class CustomPlayerController : NetworkBehaviour
         transform.Translate(new Vector3(horizontal * moveSpeed, vertical, 0), Space.World);
         if (!isGrounded)
             transform.Translate(new Vector3(0, -(gravity/10), 0), Space.World);
+    }
 
-
-        //if (jumpSpeed > 0)
-        //    characterController.Move(direction * Time.fixedDeltaTime);
-        //else
-        //    characterController.SimpleMove(direction);
-
-        //isGrounded = characterController.isGrounded;
-        //velocity = characterController.velocity;
+    private void Jump()
+    {
+        animator.Play("Jump / idle");
+        jumpSpeed = jumpForce;
+        Debug.Log("Jump !");
     }
 
     void UpdateAnimatorVar()
     {
         animator.SetBool("isJumping", isJumping);
-        animator.SetBool("isDead", isDead);
+        animator.SetBool("isGrounded", isGrounded);
         animator.SetBool("isShooting", isShooting);
         animator.SetFloat("move input", horizontal);
     }
-
-
 }
