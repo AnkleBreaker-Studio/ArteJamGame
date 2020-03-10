@@ -17,6 +17,7 @@ public class CustomPlayerController : NetworkBehaviour
     [SerializeField] bool isJumping = false;
     [SerializeField] bool isDead = false;
     [SerializeField] bool isShooting = false;
+    [SerializeField] bool isLeftDir = false;
 
     private BoxCollider collider;
 
@@ -85,11 +86,9 @@ public class CustomPlayerController : NetworkBehaviour
 
     void FixedUpdate()
     {
-        //if (!isLocalPlayer)
-        //    return;
         if (isDead)
             return;
-
+        RotateDir(horizontal);
         transform.Translate(new Vector3(horizontal * moveSpeed, vertical, 0), Space.World);
         if (!isGrounded)
             transform.Translate(new Vector3(0, -(gravity/10), 0), Space.World);
@@ -100,6 +99,21 @@ public class CustomPlayerController : NetworkBehaviour
         animator.Play("Jump / idle");
         jumpSpeed = jumpForce;
         Debug.Log("Jump !");
+    }
+
+    private void RotateDir(float dir)
+    {
+        if (dir < 0)
+        {
+            isLeftDir = true;
+            transform.Rotate(0, -90,0);
+        }
+
+        else if (dir > 0)
+        {
+            isLeftDir = false;
+            transform.Rotate(0, 90, 0);
+        }
     }
 
     void UpdateAnimatorVar()
