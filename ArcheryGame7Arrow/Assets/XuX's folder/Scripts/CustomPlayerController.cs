@@ -20,6 +20,8 @@ public class CustomPlayerController : NetworkBehaviour
     [SerializeField] bool isShooting = false;
     [SerializeField] bool isLeftDir = false;
 
+    float slowerInAirCoef;
+
     private BoxCollider collider;
     private Animator animator;
     private float rotationTime;
@@ -60,31 +62,26 @@ public class CustomPlayerController : NetworkBehaviour
             return;
 
         horizontal = Input.GetAxis("Horizontal");
+        slowerInAirCoef = 1; // increase to slow speed in air
+        isJumping = false;
+
         // For testing animations
         if (Input.GetMouseButtonDown(0))
             isShooting = true;
-        if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0))
             isShooting = false;
         if (Input.GetKey(KeyCode.E))
             animator.Play("dead");
         //isDead = true;
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
-            Jump();
-
         jumpSpeed -= Time.deltaTime;
         vertical = Mathf.Lerp(0, jumpForce, jumpSpeed);
 
-        if (jumpSpeed < 0)
-            isJumping = false;
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+            Jump();
 
-        horizontal = Input.GetAxis("Horizontal");
         if (horizontal == 0)
             Debug.Log("0 horizontal");
-        if (!isGrounded)
-        {
-            horizontal /= 3;
-        }
 
         rotationTime += Time.deltaTime * rotationSpeed;
         UpdateAnimatorVar();
@@ -92,18 +89,26 @@ public class CustomPlayerController : NetworkBehaviour
 
     void FixedUpdate()
     {
+        ApplyGravity();
         if (isDead)
             return;
         RotateDir(horizontal);
-        transform.Translate(new Vector3(horizontal * moveSpeed, vertical, 0), Space.World);
-        Camera.main.transform.Translate(new Vector3(horizontal * moveSpeed, 0, 0), Space.World);
+        transform.Translate(new Vector3((horizontal * moveSpeed) / slowerInAirCoef, vertical, 0), Space.World);
+        Camera.main.transform.Translate(new Vector3((horizontal * moveSpeed) / slowerInAirCoef, 0, 0), Space.World);
+    }
+
+    void ApplyGravity()
+    {
         if (!isGrounded)
-            transform.Translate(new Vector3(0, -(gravity/10), 0), Space.World);
+        {
+            vertical -= gravity / 10;
+            slowerInAirCoef = 1.5f; // increase to slow speed in air
+        }
     }
 
     private void Jump()
     {
-        animator.Play("Jump / idle");
+        isJumping = true;
         jumpSpeed = jumpForce;
         Debug.Log("Jump !");
     }
