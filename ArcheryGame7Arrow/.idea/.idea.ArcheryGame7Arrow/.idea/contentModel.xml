@@ -129,6 +129,7 @@
                 <e p="{ac66016d-030c-4204-9adb-0414eefba9a8}.xml" t="Include" />
                 <e p="{b7c5e81d-9f3c-4ffb-9af9-1e2a658af0e2}.xml" t="Include" />
                 <e p="{bb101118-cf07-456a-bc78-a4769403ea60}.xml" t="Include" />
+                <e p="{bc1c7eed-a5bc-4229-88f6-91f6fb763296}.xml" t="Include" />
                 <e p="{bca55c5c-2a7c-43bd-98e8-5797a9f15d9e}.xml" t="Include" />
                 <e p="{bf0cf9dd-f35c-42a5-9e43-ed71bc23cdfd}.xml" t="Include" />
                 <e p="{c12a2d44-3242-4dde-a364-fbf99e385bac}.xml" t="Include" />
@@ -1036,6 +1037,30 @@
             <e p="SimpleCharacterMotor.cs" t="Include" />
           </e>
         </e>
+        <e p="Smooth Sync" t="Include">
+          <e p="Common" t="Include">
+            <e p="Required Internal Use Scripts" t="Include">
+              <e p="Half.cs" t="Include" />
+              <e p="HalfHelper.cs" t="Include" />
+              <e p="MsgType.cs" t="Include" />
+              <e p="SyncMode.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Mirror" t="Include">
+            <e p="Smooth Sync Asset" t="Include">
+              <e p="Editor" t="Include">
+                <e p="SmoothSyncMirrorEditor.cs" t="Include" />
+              </e>
+              <e p="SmoothSyncMirror.cs" t="Include" />
+              <e p="StateMirror.cs" t="Include" />
+            </e>
+            <e p="Smooth Sync Example Scene" t="Include">
+              <e p="SmoothSyncMirrorExamplePlayerController.cs" t="Include" />
+            </e>
+          </e>
+          <e p="readme.txt" t="Include" />
+        </e>
+        <e p="SmoothCamera2DSpe.cs" t="Include" />
         <e p="TextMesh Pro" t="Include">
           <e p="Resources" t="Include">
             <e p="LineBreaking Following Characters.txt" t="Include" />
@@ -1067,7 +1092,8 @@
         </e>
         <e p="XuX's folder" t="Include">
           <e p="Scripts" t="Include">
-            <e p="Arrow.cs" t="Include" />
+            <e p="CustomPlayerController.cs" t="Include" />
+            <e p="CustomPlayerControllerSpecial.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="SpawnerPlayer.cs" t="Include" />
           </e>
