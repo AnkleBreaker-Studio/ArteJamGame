@@ -202,7 +202,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{62e0cadb-e661-4ac1-ab1d-ea6a2e17e2cb}">
 		<property name="name">
-			<value>Audio 1</value>
+			<value>hit hat</value>
 		</property>
 		<relationship name="automators">
 			<destination>{a0cbff26-92ea-4511-abcb-99192adc7807}</destination>
@@ -372,7 +372,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{31fda0ca-acfa-4fd9-99da-61ae269eb97d}">
 		<property name="name">
-			<value>Audio 2</value>
+			<value>bass</value>
 		</property>
 		<relationship name="automators">
 			<destination>{677bf254-39f7-488f-8989-14d241c72c02}</destination>
@@ -558,7 +558,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{c7507682-46fe-47a7-a3b3-75a326ed8fff}">
 		<property name="name">
-			<value>Audio 3</value>
+			<value>sword</value>
 		</property>
 		<relationship name="automators">
 			<destination>{c4359131-4d50-4e61-a896-29540bc18eee}</destination>
@@ -589,7 +589,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{c79e1395-b0ae-44a4-9093-889a637f1bef}">
 		<property name="name">
-			<value>Audio 4</value>
+			<value>audio</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{c9c4d8fe-6307-4507-853f-f90a5a689040}</destination>

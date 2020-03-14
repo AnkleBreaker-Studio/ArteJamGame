@@ -138,7 +138,7 @@
 			<value>-5</value>
 		</property>
 		<property name="name">
-			<value>Audio 1</value>
+			<value>Fanfares off</value>
 		</property>
 		<relationship name="automators">
 			<destination>{32c64b06-4e4c-4e5f-8b2d-0dd30ad0cba6}</destination>
@@ -168,7 +168,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{6e739e9c-8b44-4cfc-af6a-d9351f4fde68}">
 		<property name="name">
-			<value>Audio 2</value>
+			<value>Fanfares on</value>
 		</property>
 		<relationship name="automators">
 			<destination>{e138eac0-3134-4da3-a984-4c9c669e0c2c}</destination>
@@ -272,7 +272,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-11</value>
+			<value>-8.5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{29a16666-c847-425e-a0e4-73b3af628ddc}">
@@ -280,7 +280,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-48.75</value>
+			<value>-42.5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{9eebc668-7b43-4b8e-bddb-a7d4de178c01}">
