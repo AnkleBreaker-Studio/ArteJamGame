@@ -2759,7 +2759,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{3759b98e-2642-47d0-b222-fee50bf911c7}">
 		<property name="volume">
-			<value>-13.5</value>
+			<value>-16.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 4</value>
@@ -3115,7 +3115,7 @@
 			<value>-20.5</value>
 		</property>
 		<property name="pitch">
-			<value>0.100000001</value>
+			<value>0.200000003</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{168bdf09-b28a-4fb2-b83b-76d359bfbd2e}</destination>
@@ -3922,7 +3922,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{bc188df7-e8c6-4de5-a76e-afbe763dc620}">
 		<property name="volume">
-			<value>3</value>
+			<value>-12</value>
 		</property>
 		<property name="name">
 			<value>Audio 5</value>
@@ -4262,6 +4262,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{12b3ec7b-fe6f-4ac7-99a4-e479425a9c55}">
+		<property name="volume">
+			<value>-10</value>
+		</property>
 		<property name="name">
 			<value>Audio 6</value>
 		</property>
@@ -5092,6 +5095,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{70a0df68-a720-41f7-9094-acb0693e6e85}">
+		<property name="volume">
+			<value>-13</value>
+		</property>
 		<property name="name">
 			<value>Audio 7</value>
 		</property>
@@ -7842,6 +7848,7 @@
 	</object>
 	<object class="MixerBusEffectChain" id="{37fce490-3c9a-43d3-a568-61673c7e9a9b}">
 		<relationship name="effects">
+			<destination>{16a4b78d-5dba-4129-91b4-2ac9f76a2587}</destination>
 			<destination>{0869aed9-7ed4-4df9-bbd9-870ddf254684}</destination>
 		</relationship>
 	</object>
@@ -12211,6 +12218,14 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{ae4bad3e-f8b8-4b4d-af28-cd390113e9de}" />
+	<object class="SFXReverbEffect" id="{16a4b78d-5dba-4129-91b4-2ac9f76a2587}">
+		<property name="wetLevel">
+			<value>-3</value>
+		</property>
+		<property name="dryLevel">
+			<value>-11</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{0869aed9-7ed4-4df9-bbd9-870ddf254684}" />
 	<object class="AutomationPoint" id="{9bef654e-c769-40b5-a622-2632530bc9a3}">
 		<property name="position">

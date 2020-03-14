@@ -23,7 +23,7 @@
 			<destination>{a15c2005-6fb4-489c-acb6-6824567a3bc3}</destination>
 		</relationship>
 		<relationship name="markerTracks">
-			<destination>{9bf19613-c515-4865-8516-d24b8dd831c4}</destination>
+			<destination>{d83f4748-4a36-428e-975d-b3d55ccdbdc5}</destination>
 		</relationship>
 		<relationship name="groupTracks">
 			<destination>{28e94f7a-00cb-40e1-b560-c85a1884b635}</destination>
@@ -60,7 +60,7 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{a15c2005-6fb4-489c-acb6-6824567a3bc3}" />
-	<object class="MarkerTrack" id="{9bf19613-c515-4865-8516-d24b8dd831c4}" />
+	<object class="MarkerTrack" id="{d83f4748-4a36-428e-975d-b3d55ccdbdc5}" />
 	<object class="GroupTrack" id="{28e94f7a-00cb-40e1-b560-c85a1884b635}">
 		<relationship name="modules">
 			<destination>{c72a07a4-3405-49b8-99d6-467da2b39027}</destination>
@@ -71,7 +71,11 @@
 			<destination>{2c1a91a4-9a2d-402d-848b-88c744f98cda}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{12dc1bb5-b565-4b7b-bbb7-929e5b2a1e6f}" />
+	<object class="Timeline" id="{12dc1bb5-b565-4b7b-bbb7-929e5b2a1e6f}">
+		<property name="isProxyEnabled">
+			<value>false</value>
+		</property>
+	</object>
 	<object class="ParameterProxy" id="{3211ed80-e217-4794-8233-42417b0a0a75}">
 		<relationship name="modules">
 			<destination>{c72a07a4-3405-49b8-99d6-467da2b39027}</destination>

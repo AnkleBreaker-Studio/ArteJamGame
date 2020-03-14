@@ -224,7 +224,7 @@
 	</object>
 	<object class="SingleSound" id="{585b7306-e4a6-42ec-b213-5fbc34eb2c4b}">
 		<property name="length">
-			<value>2.25</value>
+			<value>0.58999999999999997</value>
 		</property>
 		<relationship name="fadeInCurve">
 			<destination>{074dd76f-bab5-483f-b95d-48e597bdaf60}</destination>
@@ -591,7 +591,7 @@
 	</object>
 	<object class="AutomationPoint" id="{a363a032-42f5-4557-8490-2a0468eb6448}">
 		<property name="position">
-			<value>2.1724091063250461</value>
+			<value>0.049999999999999933</value>
 		</property>
 		<property name="value">
 			<value>1</value>
@@ -602,7 +602,7 @@
 	</object>
 	<object class="AutomationPoint" id="{e3b1d0f5-badb-44b9-8955-8d1f6b8ec14a}">
 		<property name="position">
-			<value>2.25</value>
+			<value>0.58999999999999997</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -668,7 +668,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-8</value>
+			<value>-14</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{14bc6a18-77ed-49e7-b7dc-5f1d2a0c88cd}">
@@ -676,7 +676,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-60</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{38a1f819-499f-49b2-a9b3-d43613122f29}">

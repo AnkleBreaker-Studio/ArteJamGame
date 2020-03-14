@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{3155a8ff-fec9-48f1-8c40-c096fa37fb25}">
+		<property name="assetPath">
+			<value>MD_DRUM_ROLL_001.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>15.750634920634921</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{977c8b35-3d3f-42b9-b581-81986c630c86}</destination>
+		</relationship>
+	</object>
+</objects>
